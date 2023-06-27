@@ -10,7 +10,7 @@
       >
         <div class="flex flex-col w-full md:w-1/2 p-4">
           <div class="flex flex-col flex-1 justify-center mb-8">
-            <h1 class="text-4xl text-center font-thin">Welcome Back</h1>
+            <h1 class="text-4xl text-center font-thin">EV Better</h1>
             <div class="w-full mt-4">
               <Form @submit="handleLogin" :validation-schema="schema">
                 <div class="flex flex-col mt-4">
@@ -35,7 +35,7 @@
                   />
                 </div>
                 <ErrorMessage name="password" class="error-feedback" />
-                <div class="flex items-center mt-4">
+                <!-- <div class="flex items-center mt-4">
                   <Field
                     type="checkbox"
                     name="remember"
@@ -45,7 +45,7 @@
                   <label for="remember" class="text-sm text-grey-dark"
                     >Remember Me</label
                   >
-                </div>
+                </div> -->
                 <div class="flex flex-col mt-8">
                   <button
                     type="submit"
@@ -55,14 +55,14 @@
                   </button>
                 </div>
               </Form>
-              <div class="text-center mt-4">
+              <!-- <div class="text-center mt-4">
                 <a
                   class="no-underline hover:underline text-blue-dark text-xs"
                   href="{{ route('password.request') }}"
                 >
                   Forgot Your Password?
                 </a>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
