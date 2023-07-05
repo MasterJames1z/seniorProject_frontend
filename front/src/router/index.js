@@ -1,6 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
+import ResgisterView from "../views/RegisterView.vue";
+// import ClosebuyView from "../views/CloseBuy.vue";
+import UserlocationView from "../views/UserLocation.vue";
+import FindNearView from "../views/FindNearView.vue";
 
 const routes = [
   {
@@ -21,6 +25,26 @@ const routes = [
     path: "/login",
     name: "login",
     component: LoginView,
+  },
+  {
+    path: "/register",
+    name: "register",
+    component: ResgisterView,
+  },
+  // {
+  //   path: "/closebuy",
+  //   name: "closebuy",
+  //   component: ClosebuyView,
+  // },
+  {
+    path: "/userlocation",
+    name: "userlocation",
+    component: UserlocationView,
+  },
+  {
+    path: "/findnear",
+    name: "findnear",
+    component: FindNearView,
   },
 ];
 
