@@ -34,7 +34,7 @@
             </i>
           </div>
         </div>
-        <div class="mb-4">
+        <!-- <div class="mb-4">
           <div class="flex space-x-4">
             <div class="w-1/2">
               <select
@@ -56,7 +56,7 @@
               </select>
             </div>
           </div>
-        </div>
+        </div> -->
         <button
           class="bg-indigo-500 text-white rounded-lg px-4 py-2"
           @click="findCloseBuyButtonPressed"
