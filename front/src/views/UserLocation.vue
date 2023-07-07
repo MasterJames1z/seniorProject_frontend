@@ -20,6 +20,11 @@
     >
       Calculate
     </button>
+
+    <div v-if="distance" class="mt-4">
+      <p class="text-gray-700">Distance: {{ distance }}</p>
+      <p class="text-gray-700">Duration: {{ duration }}</p>
+    </div>
   </div>
 </template>
 
@@ -29,27 +34,31 @@ import axios from "axios";
 export default {
   data() {
     return {
-      origin: { lat: null, lng: null },
-      destination: { lat: null, lng: null },
+      origin: "",
+      destination: "",
+      distance: null,
+      duration: null,
     };
   },
   methods: {
     calculateButtonPressed() {
-      // const URL =
-      //   "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/distancematrix/json?origins=${this.route.origin.lat},${this.route.origin.lng}&destinations=${this.route.destination.lat},${this.route.destination.lng}&key=AIzaSyAAUnokPnN8yWpQqaf5rFPIWrqyM26f1E4";
-      // const URL =
-      //   "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/distancematrix/json?origins=40.6655101%2C-73.89188969999998&destinations=40.659569%2C-73.933783%7C40.729029%2C-73.851524%7C40.6860072%2C-73.6334271%7C40.598566%2C-73.7527626&key=AIzaSyAAUnokPnN8yWpQqaf5rFPIWrqyM26f1E4";
+      const apiKey = "AIzaSyAAUnokPnN8yWpQqaf5rFPIWrqyM26f1E4 ";
+      const origin = encodeURIComponent(this.origin);
+      const destination = encodeURIComponent(this.destination);
+      const URL = `http://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/distancematrix/json?origins=${origin}&destinations=${destination}&key=${apiKey}`;
+
       axios
         .get(URL)
         .then((response) => {
-          console.log("Done");
-          console.log(response);
+          const result = response.data.rows[0].elements[0];
+          this.distance = result.distance.text;
+          this.duration = result.duration.text;
+          console.log("Distance:", this.distance);
+          console.log("Duration:", this.duration);
         })
         .catch((error) => {
           console.log(error.message);
         });
-      console.log("Origin:", this.origin);
-      console.log("Destination:", this.destination);
     },
   },
 };
