@@ -1,6 +1,7 @@
 <template>
   <div class="grid grid-cols-2">
     <div class="w-full">
+      <h1>Address</h1>
       <form class="bg-white rounded-lg shadow-lg p-6">
         <div class="mb-4">
           <div class="flex">
@@ -76,7 +77,7 @@
       </div> -->
     </div>
     <div>
-      <h1>02</h1>
+      <h1>Maps</h1>
       <GoogleMap
         api-key="AIzaSyAAUnokPnN8yWpQqaf5rFPIWrqyM26f1E4"
         style="width: 100%; height: 500px"

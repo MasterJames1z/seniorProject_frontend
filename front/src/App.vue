@@ -1,15 +1,24 @@
 <template>
-  <nav>
-    <!-- <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> | -->
+  <!-- <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link> |
     <router-link to="/login">Login</router-link> |
     <router-link to="/register">Register</router-link> |
     <router-link to="/userlocation">Search Distance </router-link> |
     <router-link to="/findnear">Location on maps </router-link>
-  </nav>
+  </nav> -->
+  <NavBarView></NavBarView>
   <router-view />
 </template>
 
+<script>
+import NavBarView from "../src/components/Navbar.vue";
+export default {
+  components: {
+    NavBarView,
+  },
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
