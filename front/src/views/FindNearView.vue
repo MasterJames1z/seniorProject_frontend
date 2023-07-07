@@ -3,11 +3,12 @@
     <div class="w-full">
       <form class="bg-white rounded-lg shadow-lg p-6">
         <div class="mb-4">
-          <div class="relative">
+          <div class="flex">
             <input
               type="text"
               placeholder="Enter your address"
               class="w-full border-2 border-gray-300 focus:outline-none focus:border-indigo-500 rounded-lg px-4 py-2"
+              v-model="currentLocationText"
             />
             <i class="fas fa-dot-circle fa-lg text-indigo-500 cursor-pointer">
               <svg
@@ -60,7 +61,7 @@
           class="bg-indigo-500 text-white rounded-lg px-4 py-2"
           @click="findCloseBuyButtonPressed"
         >
-          Find CloseBuy
+          Find Chager
         </button>
       </form>
       <!-- <div class="segment" style="max-height: 500px; overflow-y: scroll">
@@ -78,11 +79,11 @@
       <h1>02</h1>
       <GoogleMap
         api-key="AIzaSyAAUnokPnN8yWpQqaf5rFPIWrqyM26f1E4"
-        style="width: 100%; height: 100%"
-        :center="center"
+        style="width: 100%; height: 500px"
+        :center="currentLocation"
         :zoom="15"
       >
-        <Marker :options="{ position: current }"></Marker>
+        <Marker :options="{ position: currentLocation }" />
       </GoogleMap>
     </div>
   </div>
@@ -95,11 +96,13 @@ import { GoogleMap, Marker } from "vue3-google-map";
 export default {
   data() {
     return {
-      lat: 0,
-      lng: 0,
+      lat: null,
+      lng: null,
       type: "",
       radius: "",
       places: [],
+      currentLocation: { lat: null, lng: null },
+      currentLocationText: "",
     };
   },
   components: { GoogleMap, Marker },
@@ -115,6 +118,7 @@ export default {
           this.lat = position.coords.latitude;
           this.lng = position.coords.longitude;
           console.log(this.lat, this.lng);
+          this.currentLocation = { lat: this.lat, lng: this.lng };
         },
         (error) => {
           error;
@@ -122,24 +126,35 @@ export default {
         }
       );
     },
-    findCloseBuyButtonPressed() {
-      // const URL = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.lat},${this.lng}&type=${this.type}&radius=${this.radius}&key=AIzaSyAAUnokPnN8yWpQqaf5rFPIWrqyM26f1E4`;
-      // axios
-      //   .get(URL)
-      //   .then((response) => {
-      //     this.places = response.data.results;
-      //     // this.addLocationsToGoogleMaps();
-      //   })
-      //   .catch((error) => {
-      //     console.log(error.message);
-      //   });
-      // const current = this.locatorButtonPressed();
-      // console.log(this.lat, this.lng);
-      // return current;
-      const center = { lat: 18.800485862344402, lng: 98.95041157342138 };
-
-      return { center };
+  },
+  watch: {
+    currentLocation: {
+      handler() {
+        this.currentLocationText = `${this.currentLocation.lat || ""}, ${
+          this.currentLocation.lng || ""
+        }`;
+      },
+      immediate: true,
     },
   },
+
+  // findCloseBuyButtonPressed() {
+  //   // const URL = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${this.lat},${this.lng}&type=${this.type}&radius=${this.radius}&key=AIzaSyAAUnokPnN8yWpQqaf5rFPIWrqyM26f1E4`;
+  //   // axios
+  //   //   .get(URL)
+  //   //   .then((response) => {
+  //   //     this.places = response.data.results;
+  //   //     // this.addLocationsToGoogleMaps();
+  //   //   })
+  //   //   .catch((error) => {
+  //   //     console.log(error.message);
+  //   //   });
+  //   // const current = this.locatorButtonPressed();
+  //   // console.log(this.lat, this.lng);
+  //   // return current;
+  //   const center = { lat: 18.800485862344402, lng: 98.95041157342138 };
+
+  //   return { center };
+  // },
 };
 </script>
