@@ -1,16 +1,15 @@
 <template>
-  <!-- component -->
-  <div class="bg-blue-400 h-screen w-screen">
+  <div class="bg-gray-50 dark:bg-gray-900 h-screen w-screen">
     <div
       class="flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0"
     >
       <div
-        class="flex rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2 bg-white sm:mx-0"
+        class="flex rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2 dark:bg-gray-800 dark:border-gray-700 sm:mx-0"
         style="height: 500px"
       >
         <div class="flex flex-col w-full md:w-1/2 p-4">
           <div class="flex flex-col flex-1 justify-center mb-8">
-            <h1 class="text-4xl text-center font-thin">EV Better</h1>
+            <h1 class="text-4xl text-center font-thin text-white">EV Better</h1>
             <div class="w-full mt-4">
               <Form @submit="handleLogin" :validation-schema="schema">
                 <div class="flex flex-col mt-4">
@@ -35,17 +34,6 @@
                   />
                 </div>
                 <ErrorMessage name="password" class="error-feedback" />
-                <!-- <div class="flex items-center mt-4">
-                  <Field
-                    type="checkbox"
-                    name="remember"
-                    id="remember"
-                    class="mr-2"
-                  />
-                  <label for="remember" class="text-sm text-grey-dark"
-                    >Remember Me</label
-                  >
-                </div> -->
                 <div class="flex flex-col mt-8">
                   <button
                     type="submit"
@@ -54,15 +42,19 @@
                     Login
                   </button>
                 </div>
+                <div>
+                  <p
+                    class="text-sm font-light text-gray-500 dark:text-gray-400"
+                  >
+                    Don’t have an account yet?
+                    <a
+                      href="/register"
+                      class="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                      >Sign up</a
+                    >
+                  </p>
+                </div>
               </Form>
-              <!-- <div class="text-center mt-4">
-                <a
-                  class="no-underline hover:underline text-blue-dark text-xs"
-                  href="{{ route('password.request') }}"
-                >
-                  Forgot Your Password?
-                </a>
-              </div> -->
             </div>
           </div>
         </div>
