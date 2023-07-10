@@ -43,12 +43,37 @@
             class="w-full border-2 border-gray-300 focus:outline-none focus:border-indigo-500 rounded-lg px-4 py-2"
             v-model="currentLocationText"
           />
-          <!-- <button
-            class="bg-indigo-500 text-white rounded-lg px-4 py-2"
-            @click="findCloseBuyButtonPressed"
-          >
-            Find Chager
-          </button> -->
+        </div>
+        <label for="newMarkerInput" class="mr-2">Target Location:</label>
+        <div class="flex justify-center items-center mb-4">
+          <i class="fas fa-dot-circle fa-lg text-indigo-500 cursor-pointer">
+            <svg
+              class="h-8 w-8 text-orange-500"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              @click="addMarker"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+          </i>
+          <input
+            v-model="newMarker"
+            type="text"
+            id="newMarkerInput"
+            class="w-full border-2 border-gray-300 focus:outline-none focus:border-indigo-500 rounded-lg px-4 py-2"
+          />
         </div>
         <!-- Template 2 -->
         <div v-if="showTemplates">
@@ -90,6 +115,11 @@
         :zoom="15"
       >
         <Marker :options="{ position: currentLocation }" />
+        <Marker
+          v-for="(marker, index) in markers"
+          :key="index"
+          :options="{ position: marker }"
+        />
         <!-- <Marker :options="{ position: anotherLocation }" /> -->
       </GoogleMap>
     </div>
@@ -115,6 +145,11 @@ export default {
       currentLocation: { lat: null, lng: null },
       currentLocationText: "",
       showTemplates: false,
+      markers: [
+        { lat: 18.9965075, lng: 98.9978829 },
+        { lat: 18.808083, lng: 99.016117 },
+      ],
+      newMarker: "",
       // anotherLocation: { lat: 18.80687088387711, lng: 98.95088328056549 },
     };
   },
@@ -160,6 +195,16 @@ export default {
     },
     handleSubmit(event) {
       event.preventDefault();
+    },
+    addMarker() {
+      const coordinates = this.newMarker.split(",");
+      if (coordinates.length === 2) {
+        const lat = parseFloat(coordinates[0].trim());
+        const lng = parseFloat(coordinates[1].trim());
+        if (!isNaN(lat) && !isNaN(lng)) {
+          this.markers.push({ lat, lng });
+        }
+      }
     },
   },
   watch: {
