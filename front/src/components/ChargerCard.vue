@@ -1,9 +1,9 @@
 <template>
-  <div class="mx-auto px-4">
+  <div class="mx-auto p-1 px-4 bg-gray-200 dark:bg-gray-300">
     <div
       class="h-full p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
     >
-      <a href="#">
+      <a href="/about">
         <h5
           class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
         >
@@ -14,7 +14,7 @@
         {{ charger.Station_At }}
       </p>
       <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-        Lat: {{ charger.lat }} || Lan: {{ charger.lon }}
+        lat: {{ charger.lat }} || lan: {{ charger.lon }}
       </p>
     </div>
   </div>

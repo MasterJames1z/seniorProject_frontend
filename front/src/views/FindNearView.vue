@@ -1,11 +1,15 @@
 <template>
-  <div class="grid grid-cols-1 sm:grid-cols-2">
-    <div class="w-full">
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 mx-auto p-1 px-4 bg-gray-200 dark:bg-gray-300"
+  >
+    <div class="w-full p-2">
       <h1>Address</h1>
       <form class="bg-white rounded-lg shadow-lg p-6" @submit="handleSubmit">
         <div class="flex items-center mb-4">
           <input type="checkbox" class="mr-2" v-model="showTemplates" />
-          <label class="text-gray-700">Find by Origin&Destination</label>
+          <label class="text-gray-700"
+            >Find by Starting point&Destination</label
+          >
         </div>
 
         <!-- Template 1 -->
@@ -49,7 +53,7 @@
         <!-- Template 2 -->
         <div v-if="showTemplates">
           <div class="flex flex-col items-center mt-8">
-            <label class="text-gray-700 mb-2">Origin:</label>
+            <label class="text-gray-700 mb-2">Starting point:</label>
             <input
               v-model="origin"
               type="text"
@@ -77,15 +81,16 @@
         </div>
       </form>
     </div>
-    <div>
+    <div class="p-2">
       <h1>Maps</h1>
       <GoogleMap
         api-key="AIzaSyAAUnokPnN8yWpQqaf5rFPIWrqyM26f1E4"
-        style="width: 100%; height: 500px"
+        style="width: 100%; height: 700px"
         :center="currentLocation"
         :zoom="15"
       >
         <Marker :options="{ position: currentLocation }" />
+        <!-- <Marker :options="{ position: anotherLocation }" /> -->
       </GoogleMap>
     </div>
   </div>
@@ -110,6 +115,7 @@ export default {
       currentLocation: { lat: null, lng: null },
       currentLocationText: "",
       showTemplates: false,
+      // anotherLocation: { lat: 18.80687088387711, lng: 98.95088328056549 },
     };
   },
   components: { GoogleMap, Marker },
