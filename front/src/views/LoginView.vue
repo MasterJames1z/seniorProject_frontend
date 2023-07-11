@@ -1,6 +1,6 @@
 <template>
   <!-- component -->
-  <div class="mx-auto p-1 px-4 bg-gray-200 dark:bg-gray-500 h-screen w-screen">
+  <div class="mx-auto p-1 px-4 bg-gray-300 dark:bg-gray-800 h-screen w-screen">
     <div
       class="flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0"
     >
