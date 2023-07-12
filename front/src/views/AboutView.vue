@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex justify-center items-center mb-4">
+    <div class="flex justify-center items-center mb-4 p-2">
       <label for="newMarkerInput" class="mr-2">New Charger:</label>
       <input
         v-model="newMarker"
@@ -10,12 +10,14 @@
       />
       <button
         @click="addMarker"
-        class="ml-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        class="ml-2 bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded"
       >
-        Add Marker
+        Add Charger
       </button>
     </div>
-
+    <div v-if="errorMessage" class="notification error">
+      {{ errorMessage }}
+    </div>
     <GoogleMap
       api-key="AIzaSyAAUnokPnN8yWpQqaf5rFPIWrqyM26f1E4"
       style="width: 100%; height: 700px"
@@ -59,6 +61,7 @@ export default {
         { lat: 18.767954, lng: 98.9839944 },
       ],
       newMarker: "",
+      errorMessage: "",
     };
   },
   methods: {
@@ -70,9 +73,34 @@ export default {
         if (!isNaN(lat) && !isNaN(lng)) {
           this.markers.push({ lat, lng });
           this.newMarker = "";
+        } else {
+          this.displayErrorMessage(
+            "Invalid coordinates. Please enter valid numbers."
+          );
         }
+      } else {
+        this.displayErrorMessage(
+          "Invalid coordinates format. Please enter latitude and longitude separated by a comma."
+        );
       }
+    },
+
+    displayErrorMessage(message) {
+      this.errorMessage = message;
+      setTimeout(() => {
+        this.errorMessage = "";
+      }, 3000); // Clear the error message after 3 seconds
     },
   },
 };
 </script>
+
+<style>
+.notification {
+  background-color: #f44336;
+  color: white;
+  padding: 12px;
+  margin-top: 16px;
+  border-radius: 4px;
+}
+</style>

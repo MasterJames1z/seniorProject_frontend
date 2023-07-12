@@ -1,6 +1,6 @@
 <template>
   <div
-    class="grid grid-cols-1 sm:grid-cols-2 mx-auto p-1 px-4 bg-gray-200 dark:bg-gray-300"
+    class="grid grid-cols-1 sm:grid-cols-2 mx-auto p-1 px-4 bg-gray-200 dark:bg-gray-300 h-screen"
   >
     <div class="w-full p-2">
       <h1>Address</h1>
@@ -103,6 +103,9 @@
             <p class="text-gray-700">Distance: {{ distance }}</p>
             <p class="text-gray-700">Duration: {{ duration }}</p>
           </div>
+          <div v-if="showTemplates && errorMessage" class="mt-4">
+            <p class="text-red-500">{{ errorMessage }}</p>
+          </div>
         </div>
       </form>
     </div>
@@ -150,6 +153,7 @@ export default {
         { lat: 18.808083, lng: 99.016117 },
       ],
       newMarker: "",
+      errorMessage: "",
       // anotherLocation: { lat: 18.80687088387711, lng: 98.95088328056549 },
     };
   },
@@ -188,9 +192,11 @@ export default {
           this.duration = result.duration.text;
           console.log("Distance:", this.distance);
           console.log("Duration:", this.duration);
+          this.errorMessage = "";
         })
         .catch((error) => {
           console.log(error.message);
+          this.errorMessage = "Error calculating distance. Please try again.";
         });
     },
     handleSubmit(event) {

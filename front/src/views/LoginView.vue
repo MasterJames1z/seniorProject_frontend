@@ -5,7 +5,7 @@
       class="flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0"
     >
       <div
-        class="flex rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2 dark:bg-gray-800 dark:border-gray-700 sm:mx-0"
+        class="flex rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2 dark:bg-gray-900 dark:border-gray-700 sm:mx-0"
         style="height: 500px"
       >
         <div class="flex flex-col w-full md:w-1/2 p-4">
@@ -23,7 +23,10 @@
                     placeholder="Username"
                   />
                 </div>
-                <ErrorMessage name="username" class="error-feedback" />
+                <ErrorMessage
+                  name="username"
+                  class="error-feedback text-yellow-600"
+                />
                 <div class="flex flex-col mt-4">
                   <Field
                     id="password"
@@ -34,7 +37,11 @@
                     placeholder="Password"
                   />
                 </div>
-                <ErrorMessage name="password" class="error-feedback" />
+                <div v-if="message" class="text-red-500">{{ message }}</div>
+                <ErrorMessage
+                  name="password"
+                  class="error-feedback text-yellow-600"
+                />
                 <div class="flex flex-col mt-8">
                   <button
                     type="submit"
@@ -45,7 +52,7 @@
                 </div>
                 <div>
                   <p
-                    class="text-sm font-light text-gray-500 dark:text-gray-400"
+                    class="text-sm font-light text-gray-500 dark:text-gray-400 p-3"
                   >
                     Don’t have an account yet?
                     <a
@@ -62,7 +69,7 @@
         <div
           class="hidden md:block md:w-1/2 rounded-r-lg"
           style="
-            background: url('https://images.unsplash.com/photo-1515965885361-f1e0095517ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80');
+            background: url('https://static.ffx.io/images/$zoom_0.407%2C$multiply_0.7725%2C$ratio_1.5%2C$width_756%2C$x_0%2C$y_0/t_crop_custom/q_86%2Cf_auto/544c14a48320b0e7b6e5e6a017f836e9ca323845');
             background-size: cover;
             background-position: center center;
           "
@@ -102,6 +109,11 @@ export default {
         })
         .catch((e) => {
           console.log(e);
+          if (e.response && e.response.status === 401) {
+            this.message = "Incorrect password";
+          } else {
+            this.message = "An error occurred";
+          }
         });
     },
   },
