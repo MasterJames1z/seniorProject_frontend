@@ -1,15 +1,8 @@
 <template>
-  <nav
-    class="bg-white dark:bg-gray-900 w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600"
-  >
-    <div
-      class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
-    >
+  <nav class="bg-white dark:bg-gray-900 w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="/" class="flex items-center">
-        <span
-          class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-          >EV Better</span
-        >
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">EV Better</span>
       </a>
       <div class="flex md:order-2">
         <button
@@ -25,6 +18,7 @@
           class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar-sticky"
           aria-expanded="false"
+          @click="toggleNavbar"
         >
           <span class="sr-only">Open main menu</span>
           <svg
@@ -92,6 +86,10 @@ export default {
   methods: {
     getLogin() {
       this.$router.push("/login");
+    },
+    toggleNavbar() {
+      const navbarSticky = document.getElementById("navbar-sticky");
+      navbarSticky.classList.toggle("hidden");
     },
   },
 };
