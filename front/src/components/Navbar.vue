@@ -13,6 +13,24 @@
         </span>
       </a>
       <div class="flex md:order-2">
+        <svg
+          v-if="currentUser"
+          class="self-center w-6 h-6 text-gray-800 dark:text-white"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 18 20"
+        >
+          <path
+            d="M16 0H4a2 2 0 0 0-2 2v1H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4.5a3 3 0 1 1 0 6 3 3 0 0 1 0-6ZM13.929 17H7.071a.5.5 0 0 1-.5-.5 3.935 3.935 0 1 1 7.858 0 .5.5 0 0 1-.5.5Z"
+          />
+        </svg>
+        <h1
+          v-if="currentUser"
+          class="self-center not-italic text-white text-xl p-1"
+        >
+          :{{ currentUser.username }}
+        </h1>
         <button
           v-if="currentUser"
           @click="logout"
@@ -65,7 +83,6 @@
           <li>
             <a
               href="/"
-              v-if="currentUser"
               class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
               aria-current="page"
               >Home</a
@@ -74,7 +91,6 @@
           <li>
             <a
               href="/userlocation"
-              v-if="currentUser"
               class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >List Charger</a
             >
@@ -82,7 +98,6 @@
           <li>
             <a
               href="/findnear"
-              v-if="currentUser"
               class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >Find Charger</a
             >
@@ -90,7 +105,6 @@
           <li>
             <a
               href="/register"
-              v-if="currentUser"
               class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >Register</a
             >
@@ -102,6 +116,8 @@
 </template>
 
 <script>
+import AuthService from "@/services/AuthService";
+
 export default {
   name: "NavBarComponent",
   inject: ["GStore"],
@@ -115,7 +131,7 @@ export default {
       this.$router.push("/login");
     },
     logout() {
-      this.GStore.currentUser = null;
+      AuthService.logout();
       // Perform any necessary logout operations
       // Redirect to the desired route
       // this.$router.push("/login");
@@ -124,6 +140,10 @@ export default {
       const navbarSticky = document.getElementById("navbar-sticky");
       navbarSticky.classList.toggle("hidden");
     },
+  },
+  beforeUnmount() {
+    // Clear currentUser when the component is unmounted
+    this.GStore.currentUser = null;
   },
 };
 </script>
