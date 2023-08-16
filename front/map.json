@@ -1,0 +1,86 @@
+[
+    {
+        "province" : "เชียงใหม่",
+        "distance" : 0,
+        "station_in" : {
+            "id": 1
+        }
+    },
+    {
+        "province" : "ลำพูน",
+        "distance" : 50,
+        "station_in" : {
+            "id": 1
+        }
+    },
+    {
+        "province" : "ลำปาง",
+        "distance" : 100,
+        "station_in" : {
+            "id": 1
+        }
+    },
+    {
+        "province" : "ตาก",
+        "distance" : 280,
+        "station_in" : {
+            "id": 1
+        }
+    },
+    {
+        "province" : "กำแพงเพชร",
+        "distance" : 410,
+        "station_in" : {
+            "id": 1
+        }
+    },
+    {
+        "province" : "นครสวรรค์",
+        "distance" : 460,
+        "station_in" : {
+            "id": 1
+        }
+    },
+    {
+        "province" : "ชัยนาท",
+        "distance" : 520,
+        "station_in" : {
+            "id": 1
+        }
+    },
+    {
+        "province" : "สิงห์บุรี",
+        "distance" : 555,
+        "station_in" : {
+            "id": 1
+        }
+    },
+    {
+        "province" : "อ่างทอง",
+        "distance" : 590,
+        "station_in" : {
+            "id": 1
+        }
+    },
+    {
+        "province" : "อยุธยา",
+        "distance" : 630,
+        "station_in" : {
+            "id": 1
+        }
+    },
+    {
+        "province" : "ปทุมธานี",
+        "distance" : 670,
+        "station_in" : {
+            "id": 1
+        }
+    },
+    {
+        "province" : "กรุงเทพ",
+        "distance" : 701,
+        "station_in" : {
+            "id": 1
+        }
+    }
+]

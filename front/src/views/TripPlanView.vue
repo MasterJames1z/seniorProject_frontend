@@ -50,8 +50,12 @@
     </div>
     <div>
       2
-      <p>Origin: {{ origin }}</p>
-      <p>Destination: {{ destination }}</p>
+      <div class="flex items-center justify-center bg-gray-400">
+        <!-- <div class="grid grid-cols-1"> -->
+        <!-- </div> -->
+      </div>
+      <!-- <p>Origin: {{ origin }}</p>
+      <p>Destination: {{ destination }}</p> -->
     </div>
   </div>
 </template>
@@ -73,6 +77,10 @@ export default {
   },
   methods: {
     calculateButtonPressed() {
+      if (!this.origin || !this.destination) {
+        this.errorMessage = "Please enter both origin and destination.";
+        return;
+      }
       const apiKey = "AIzaSyAAUnokPnN8yWpQqaf5rFPIWrqyM26f1E4";
       const origin = encodeURIComponent(this.origin);
       const destination = encodeURIComponent(this.destination);
