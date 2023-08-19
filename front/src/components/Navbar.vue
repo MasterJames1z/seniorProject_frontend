@@ -29,7 +29,7 @@
           v-if="currentUser"
           class="self-center not-italic text-white text-xl p-1"
         >
-          :{{ currentUser.username }}
+          :{{ currentUser.username }},{{ currentUser.distance }}
         </h1>
         <button
           v-if="currentUser"
