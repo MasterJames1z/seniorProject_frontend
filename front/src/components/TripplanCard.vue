@@ -27,7 +27,8 @@
               your weekly benefits:
             </p>
             <a
-              :href="map"
+              :href="generateMap()"
+              target="_blank"
               class="inline-flex items-center text-green-600 hover:underline"
             >
               See on Google Mpas
@@ -128,7 +129,8 @@
               your weekly benefits:
             </p>
             <a
-              href="#"
+              :href="generateMap()"
+              target="_blank"
               class="inline-flex items-center text-green-600 hover:underline"
             >
               See on Google Mpas
@@ -156,39 +158,25 @@
 </template>
 
 <script>
-import { computed } from "vue";
 export default {
   name: "TripCard",
   inject: ["GStore"],
-  computed: {
-    currentUser() {
-      return this.GStore.currentUser;
-    },
-  },
   props: {
     tripcard: {
       type: Object,
       required: true,
     },
   },
-  setup(tripcard) {
-    const map = computed(
-      () =>
-        `https://www.google.com/maps/search/?api=1&query=${tripcard.station_in.charger_1.latitude},${tripcard.station_in.charger_1.longitude}`
-    );
-    return {
-      map,
-    };
-  },
   data() {
     return {
       sum: 0,
+      currentUser: this.GStore.currentUser,
     };
   },
-  // methods: {
-  //   generateMap(tripcard) {
-  //     return `https://www.google.com/maps/search/?api=1&query=${tripcard.latitude},${tripcard.longitude}`;
-  //   },
-  // },
+  methods: {
+    generateMap() {
+      return `https://www.google.com/maps/search/?api=1&query=${this.tripcard.station_in.chager_1.latitude},${this.tripcard.station_in.chager_1.longitude}`;
+    },
+  },
 };
 </script>
