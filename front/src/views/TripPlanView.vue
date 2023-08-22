@@ -29,13 +29,13 @@
         </button>
       </div>
       <!-- Results section -->
-      <div v-if="distance" class="mt-4">
+      <!-- <div v-if="distance" class="mt-4">
         <p class="text-gray-700">Distance: {{ distance }}</p>
         <p class="text-gray-700">Duration: {{ duration }}</p>
       </div>
       <div v-if="showTemplates && errorMessage" class="mt-4">
         <p class="text-red-500">{{ errorMessage }}</p>
-      </div>
+      </div> -->
 
       <div v-if="showTemplates">
         <div>
@@ -51,8 +51,17 @@
     <div>
       2
       <div class="flex items-center justify-center bg-gray-400">
-        <!-- <div class="grid grid-cols-1"> -->
-        <!-- </div> -->
+        <div class="grid grid-cols-1">
+          <p>Origin: {{ origin }}</p>
+          <p>Destination: {{ destination }}</p>
+          <div v-if="distance" class="mt-4">
+            <p class="text-gray-700">Distance: {{ distance }}</p>
+            <p class="text-gray-700">Duration: {{ duration }}</p>
+          </div>
+          <div v-if="showTemplates && errorMessage" class="mt-4">
+            <p class="text-red-500">{{ errorMessage }}</p>
+          </div>
+        </div>
       </div>
       <!-- <p>Origin: {{ origin }}</p>
       <p>Destination: {{ destination }}</p> -->
@@ -101,7 +110,7 @@ export default {
         });
     },
     roadmapButtonPressed() {
-      this.$router.push({ name: "findnear" });
+      this.$router.push({ name: "checktrip" });
     },
   },
 };

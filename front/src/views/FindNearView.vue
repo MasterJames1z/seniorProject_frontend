@@ -148,10 +148,7 @@ export default {
       currentLocation: { lat: null, lng: null },
       currentLocationText: "",
       showTemplates: false,
-      markers: [
-        { lat: 18.9965075, lng: 98.9978829 },
-        { lat: 18.808083, lng: 99.016117 },
-      ],
+      markers: [],
       newMarker: "",
       errorMessage: "",
       // anotherLocation: { lat: 18.80687088387711, lng: 98.95088328056549 },

@@ -194,7 +194,7 @@
         "station_in": {
             "chager_1": {
                 "station_of": "EA ANYWHERE",
-                "name": "EV STATION สาขาโรบินสัน กำแพงเพชร จ. กำแพงเพชร",
+                "name": " สาขาโรบินสัน กำแพงเพชร จ. กำแพงเพชร",
                 "type": {
                     "type_dc": {
                         "sta_1": " 2 เครื่อง "
@@ -223,7 +223,7 @@
             },
             "chager_3": {
                 "station_of": "PTT",
-                "name": "EV STATION สาขาธรรมรัตน์ ปิโตรเลียม จ.กำแพงเพชร",
+                "name": " สาขาธรรมรัตน์ ปิโตรเลียม จ.กำแพงเพชร",
                 "type": {
                     "type_dc": {
                         "sta_1": " CCS/SAE 120 KW ",
@@ -244,15 +244,15 @@
         "station_in": {
             "chager_1": {
                 "station_of": "PEA VOLTA",
-                "name": "EV STATION ปั๊มน้ำมันบางจาก พยุหะคีรี นครสวรรค์",
+                "name": " ปั๊มน้ำมันบางจาก พยุหะคีรี นครสวรรค์",
                 "type": {
                     "type_dc": {
                         "sta_1": " CCS/SAE 50KW ",
                         "sta_2": " CHAdeMO 50KW เครื่อง "
-                    },
-                    "latitude": "15.498717170544362",
-                    "longitude": " 100.12871416626247"
-                }
+                    }
+                },
+                "latitude": "15.498717170544362",
+                "longitude": "100.12871416626247"
             },
             "chager_2": {
                 "station_of": "EleX by EGAT",
@@ -270,7 +270,7 @@
             },
             "chager_3": {
                 "station_of": "EA ANYWHERE",
-                "name": "EV STATION สาขา T-Space Coworking & Cafe จ. นครสวรรค์",
+                "name": " สาขา T-Space Coworking & Cafe จ. นครสวรรค์",
                 "type": {
                     "type_dc": {
                         "sta_1": " 2 เครื่อง "
@@ -290,7 +290,7 @@
         "station_in": {
             "chager_1": {
                 "station_of": "EA ANYWHERE",
-                "name": "EV STATION สาขาชัยนาท รีสอร์ท จ. ชัยนาท",
+                "name": " สาขาชัยนาท รีสอร์ท จ. ชัยนาท",
                 "type": {
                     "type_dc": {
                         "sta_1": " CCS/SAE 150KW "
@@ -304,7 +304,7 @@
             },
             "chager_2": {
                 "station_of": "EA ANYWHERE",
-                "name": "EV STATION สาขาณัฐชนนฟาร์ม รีสอร์ท จ. ชัยนาท",
+                "name": " สาขาณัฐชนนฟาร์ม รีสอร์ท จ. ชัยนาท",
                 "type": {
                     "type_dc": {
                         "sta_1": " CCS/SAE 150KW "
@@ -318,7 +318,7 @@
             },
             "chager_3": {
                 "station_of": "EA ANYWHERE",
-                "name": "EV STATION สาขาแฟนตาซี รีสอร์ท จ. ชัยนาท",
+                "name": " สาขาแฟนตาซี รีสอร์ท จ. ชัยนาท",
                 "type": {
                     "type_dc": {
                         "sta_1": " CCS "
@@ -338,7 +338,7 @@
         "station_in": {
             "chager_1": {
                 "station_of": "EA ANYWHERE",
-                "name": "EV STATION สาขาเกษรา เบเกอรี่ จ. สิงห์บุรี",
+                "name": " สาขาเกษรา เบเกอรี่ จ. สิงห์บุรี",
                 "type": {
                     "type_dc": {
                         "sta_1": " CCS/SAE 150KW "
@@ -349,7 +349,7 @@
             },
             "chager_2": {
                 "station_of": "EA ANYWHERE",
-                "name": "EV STATION สาขาไชยแสง ปิโตรเลียม จ. สิงห์บุรี",
+                "name": " สาขาไชยแสง ปิโตรเลียม จ. สิงห์บุรี",
                 "type": {
                     "type_dc": {
                         "sta_1": " CCS/SAE 150KW ",
@@ -364,7 +364,7 @@
             },
             "chager_3": {
                 "station_of": "PEA VOLTA",
-                "name": "EV STATION ปั๊มน้ำมันบางจาก อินทร์บุรี (ขาออก) สิงห์บุรี ",
+                "name": " ปั๊มน้ำมันบางจาก อินทร์บุรี (ขาออก) สิงห์บุรี ",
                 "type": {
                     "type_dc": {
                         "sta_1": " CCS/SAE 50KW ",
@@ -427,22 +427,20 @@
         "province": "อยุธยา",
         "distance": 630,
         "station_in": {
-            "station_in": {
-                "chager_1": {
-                    "station_of": " PEA VOLTA ",
-                    "name": "EV STATION ปั๊มน้ำมันบางจาก บางปะอิน (สายเอเชีย กม.62 ขาออก) ",
-                    "type": {
-                        "type_dc": {
-                            "sta_1": "CCS ",
-                            "sta_2": "CHAdeMO "
-                        },
-                        "type_ac": {
-                            "sta_1": "Type2 20"
-                        }
+            "chager_1": {
+                "station_of": "PEA VOLTA ",
+                "name": " ปั๊มน้ำมันบางจาก บางปะอิน (สายเอเชีย กม.62 ขาออก) ",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "CCS ",
+                        "sta_2": "CHAdeMO "
                     },
-                    "latitude": "14.265869448144686",
-                    "longitude": "100.6124508843775  "
-                }
+                    "type_ac": {
+                        "sta_1": "Type2 20"
+                    }
+                },
+                "latitude": "14.265869448144686",
+                "longitude": "100.6124508843775  "
             },
             "chager_2": {
                 "station_of": "EleX by EGAT",
@@ -460,7 +458,7 @@
             },
             "chager_3": {
                 "station_of": "EA ANYWHERE ",
-                "name": "EV STATION สาขา Porto Go บางปะอิน จ. พระนครศรีอยุธยา ",
+                "name": " สาขา Porto Go บางปะอิน จ. พระนครศรีอยุธยา ",
                 "type": {
                     "type_ac": {
                         "sta_1": "Type2 "
@@ -475,23 +473,21 @@
         "province": "ปทุมธานี",
         "distance": 670,
         "station_in": {
-            "station_in": {
-                "chager_1": {
-                    "station_of": " PEA VOLTA ",
-                    "name": "PEA VOLTA รังสิต ",
-                    "type": {
-                        "type_dc": {
-                            "sta_1": "CCS/SAE ",
-                            "sta_2": "CHAdeMO "
-                        }
-                    },
-                    "latitude": "14.045547478405325",
-                    "longitude": "100.61584569460781  "
-                }
+            "chager_1": {
+                "station_of": " PEA VOLTA ",
+                "name": "PEA VOLTA รังสิต ",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "CCS/SAE ",
+                        "sta_2": "CHAdeMO "
+                    }
+                },
+                "latitude": "14.045547478405325",
+                "longitude": "100.61584569460781  "
             },
             "chager_2": {
-                "station_of": "EV Station",
-                "name": "EV Station สถานีชาร์จรถไฟฟ้า ธัญบุรี ปทุมธานี ",
+                "station_of": "EA ANYWHERE ",
+                "name": " สถานีชาร์จรถไฟฟ้า ธัญบุรี ปทุมธานี ",
                 "type": {
                     "type_dc": {
                         "sta_1": "CCS/SAE 120 kW ",
@@ -528,13 +524,13 @@
                         "sta_1": "CCS 120 KW",
                         "sta_2": "CHAdeMO 60 kW"
                     }
-                }
+                },
+                "latitude": "13.6754925",
+                "longitude": "100.5948308"
             },
-            "latitude": "13.6754925",
-            "longitude": "100.5948308",
             "chager_2": {
                 "station_of": "EVolt",
-                "name": "Volt สถานีชาร์จรถไฟฟ้า บางพลัด กรุงเทพมหานคร | 544 ถนน บรมราชชนนี",
+                "name": "สถานีชาร์จรถไฟฟ้า บางพลัด กรุงเทพมหานคร | 544 ถนน บรมราชชนนี",
                 "type": {
                     "type_ac": {
                         "sta_1": "Type2 7 KW"
@@ -545,7 +541,7 @@
             },
             "chager_3": {
                 "station_of": "Elex by EGAT",
-                "name": "Elex by EGAT สถานีชาร์จรถไฟฟ้า จตุจักร กรุงเทพมหานคร | 140/21 นิคมรถไฟ ",
+                "name": "สถานีชาร์จรถไฟฟ้า จตุจักร กรุงเทพมหานคร | 140/21 นิคมรถไฟ ",
                 "type": {
                     "type_dc": {
                         "sta_1": "CCS/SAE 50 kW ",
