@@ -50,6 +50,7 @@
     </div>
     <div>
       2
+      <InputForm />
       <div class="flex items-center justify-center bg-gray-400">
         <div class="grid grid-cols-1">
           <p>Origin: {{ origin }}</p>
@@ -71,8 +72,11 @@
 
 <script>
 import axios from "axios";
-
+import InputForm from "../components/InputForm.vue";
 export default {
+  components: {
+    InputForm,
+  },
   data() {
     return {
       inputValues: {
