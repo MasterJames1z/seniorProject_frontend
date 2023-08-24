@@ -7,6 +7,7 @@ import UserlocationView from "../views/UserLocation.vue";
 import FindNearView from "../views/FindNearView.vue";
 import TripPlanViewView from "../views/TripPlanView.vue";
 import CheckTripView from "../views/CheckTripView.vue";
+import SummaryView from "../views/SummaryView.vue";
 
 const routes = [
   {
@@ -57,6 +58,11 @@ const routes = [
     path: "/checktrip",
     name: "checktrip",
     component: CheckTripView,
+  },
+  {
+    path: "/summary",
+    name: "summary",
+    component: SummaryView,
   },
 ];
 
