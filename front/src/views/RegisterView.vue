@@ -78,6 +78,23 @@
                 Passwords do not match.
               </p>
             </div>
+            <div>
+              <label
+                for="distance"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Distance</label
+              >
+              <Field
+                type="distance"
+                name="distance"
+                v-model="distance"
+                id="distance"
+                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Distance"
+                required=""
+              />
+              <ErrorMessage name="distance" class="text-yellow-600" />
+            </div>
             <div v-if="message" class="text-red-500">{{ message }}</div>
             <button
               type="submit"
@@ -110,6 +127,7 @@ export default {
       message: "",
       confirmPassword: "",
       confirmPasswordError: false,
+      distance: "",
       schema: yup.object().shape({
         username: yup.string().required("Username is required!"),
         password: yup.string().required("Password is required!"),
@@ -129,6 +147,7 @@ export default {
       const user = {
         username: this.username,
         password: this.password,
+        distance: this.distance,
       };
       AuthService.register(user)
         .then((response) => {
