@@ -5,6 +5,8 @@ import ResgisterView from "../views/RegisterView.vue";
 // import ClosebuyView from "../views/CloseBuy.vue";
 import UserlocationView from "../views/UserLocation.vue";
 import FindNearView from "../views/FindNearView.vue";
+import TripPlanViewView from "../views/TripPlanView.vue";
+import CheckTripView from "../views/CheckTripView.vue";
 
 const routes = [
   {
@@ -45,6 +47,16 @@ const routes = [
     path: "/findnear",
     name: "findnear",
     component: FindNearView,
+  },
+  {
+    path: "/tripplan",
+    name: "tripplan",
+    component: TripPlanViewView,
+  },
+  {
+    path: "/checktrip",
+    name: "checktrip",
+    component: CheckTripView,
   },
 ];
 
