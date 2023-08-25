@@ -235,6 +235,12 @@
                     </a>
                   </div>
                   <button
+                    @click="openPopup"
+                    class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded mt-4"
+                  >
+                    OK
+                  </button>
+                  <button
                     @click="closePopup"
                     class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded mt-4"
                   >
@@ -394,6 +400,9 @@ export default {
     },
     closePopup() {
       this.isPopupVisible = false;
+    },
+    openPopup() {
+      this.$router.push({ name: "summary" });
     },
   },
 };
