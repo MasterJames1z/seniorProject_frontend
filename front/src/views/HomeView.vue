@@ -17,6 +17,7 @@
             trips.
           </p>
           <button
+            @click="getStart"
             class="bg-green-600 text-white font-bold rounded-lg py-2 px-4 mt-8 hover:bg-white hover:text-green-600"
           >
             GET STARTED
@@ -141,6 +142,11 @@
 export default {
   name: "HomeView",
   components: {},
+  methods: {
+    getStart() {
+      this.$router.push({ name: "tripplan" });
+    },
+  },
 };
 </script>
 

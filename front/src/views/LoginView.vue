@@ -1,6 +1,6 @@
 <template>
   <!-- component -->
-  <div class="mx-auto p-1 px-4 bg-gray-300 dark:bg-gray-800 h-screen">
+  <div class="mx-auto p-1 px-4 bg-white-300 dark:bg-white-800 h-screen">
     <div
       class="flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0"
     >
@@ -10,7 +10,7 @@
       >
         <div class="flex flex-col w-full md:w-1/2 p-4">
           <div class="flex flex-col flex-1 justify-center mb-8">
-            <h1 class="text-4xl text-center font-thin text-white">EV Better</h1>
+            <h1 class="text-4xl text-center font-thin text-black">EV Better</h1>
             <div class="w-full mt-4">
               <Form @submit="handleLogin" :validation-schema="schema">
                 <div class="flex flex-col mt-4">

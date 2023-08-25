@@ -3,7 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
 import ResgisterView from "../views/RegisterView.vue";
 // import ClosebuyView from "../views/CloseBuy.vue";
-import UserlocationView from "../views/UserLocation.vue";
+import ListofChagerView from "../views/ListofChagerView.vue";
 import FindNearView from "../views/FindNearView.vue";
 import TripPlanViewView from "../views/TripPlanView.vue";
 import CheckTripView from "../views/CheckTripView.vue";
@@ -16,7 +16,7 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/about",
+    path: "/chargermap",
     name: "about",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -40,9 +40,9 @@ const routes = [
   //   component: ClosebuyView,
   // },
   {
-    path: "/userlocation",
-    name: "userlocation",
-    component: UserlocationView,
+    path: "/listofcharger",
+    name: "listofcharger",
+    component: ListofChagerView,
   },
   {
     path: "/findnear",
