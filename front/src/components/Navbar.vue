@@ -27,7 +27,7 @@
         </svg>
         <h1
           v-if="currentUser"
-          class="self-center not-italic text-white text-xl p-1"
+          class="self-center not-italic text-black text-xl p-1"
         >
           :{{ currentUser.username }},{{ currentUser.distance }}
         </h1>
