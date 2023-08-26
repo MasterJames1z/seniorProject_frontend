@@ -111,6 +111,45 @@
         </div>
       </div>
     </div>
+    <div
+      v-if="noTi"
+      id="toast-bottom-right"
+      class="fixed flex items-center max-w-xs p-4 space-x-4 text-gray-500 bg-white divide-x divide-gray-200 rounded-lg shadow right-5 bottom-5 dark:text-gray-400 dark:divide-gray-700 space-x dark:bg-gray-800"
+      role="alert"
+    >
+      <div class="text-sm font-normal">Need to login before.</div>
+      <div class="flex items-center ml-auto space-x-2">
+        <a
+          class="text-sm font-medium text-blue-600 p-1.5 hover:bg-blue-100 rounded-lg dark:text-blue-500 dark:hover:bg-gray-700"
+          href="/login"
+          >OK</a
+        >
+        <button
+          @click="closeNoti"
+          type="button"
+          class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+          data-dismiss-target="#toast-undo"
+          aria-label="Close"
+        >
+          <span class="sr-only">Close</span>
+          <svg
+            class="w-3 h-3"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 14"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -118,12 +157,6 @@
 import axios from "axios";
 export default {
   inject: ["GStore"],
-  props: {
-    tripcard: {
-      type: Object,
-      required: true,
-    },
-  },
   data() {
     return {
       inputValues: {
@@ -137,7 +170,17 @@ export default {
       showTemplates: false,
       filter: false,
       showButtonRoad: false,
+      isPlanButtonDisabled: true,
+      noTi: false,
     };
+  },
+  computed: {
+    shouldShowResult() {
+      return this.showButtonRoad && this.origin && this.destination;
+    },
+    currentUser() {
+      return this.GStore.currentUser;
+    },
   },
   methods: {
     calculateButtonPressed() {
@@ -168,12 +211,19 @@ export default {
       this.$router.push({ name: "checktrip" });
     },
     calculateButtonPressednonSearch() {
-      this.origin = "เชียงใหม่";
-      this.destination = "กรุงเทพ";
+      if (!this.origin || !this.destination) {
+        return; // Exit the method if either origin or destination is not selected
+      }
+      (this.origin = "เชียงใหม่"), (this.destination = "กรุงเทพ");
       this.distance = "701 KM";
       this.duration = "9 hours 1 min";
       this.showButtonRoad = true;
+      this.isPlanButtonDisabled = false;
+      this.noTi = true;
       console.log(this.origin, this.destination, this.distance, this.duration);
+    },
+    closeNoti() {
+      this.$router.push({ name: "tripplan" });
     },
   },
 };

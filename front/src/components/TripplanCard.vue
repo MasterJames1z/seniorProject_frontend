@@ -5,7 +5,7 @@
       <li v-if="tripcard.distance < currentUser.distance * 0.9">
         <div class="flex-start flex items-center pt-3">
           <div
-            class="-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-green-300 dark:bg-green-500"
+            class="-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-green-500 dark:bg-green-700"
           ></div>
           <p class="text-sm text-neutral-500 dark:text-neutral-300">
             {{ tripcard.distance }}
@@ -131,7 +131,7 @@
       >
         <div class="flex-start flex items-center pt-3">
           <div
-            class="-ml-[10px] mr-3 h-[18px] w-[18px] rounded-full bg-orange-300 dark:bg-orange-500"
+            class="-ml-[10px] mr-3 h-[18px] w-[18px] rounded-full bg-orange-400 dark:bg-orange-500"
           ></div>
           <p class="text-sm text-neutral-500 dark:text-neutral-300">
             {{ tripcard.distance }}
@@ -236,7 +236,7 @@
                   </div>
                   <button
                     @click="openPopup"
-                    class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded mt-4"
+                    class="m-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded mt-4"
                   >
                     OK
                   </button>
@@ -255,7 +255,7 @@
       <li v-if="tripcard.distance > currentUser.distance">
         <div class="flex-start flex items-center pt-3">
           <div
-            class="-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-red-300 dark:bg-red-500"
+            class="-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-red-500 dark:bg-red-700"
           ></div>
           <p class="text-sm text-neutral-500 dark:text-neutral-300">
             {{ tripcard.distance }}

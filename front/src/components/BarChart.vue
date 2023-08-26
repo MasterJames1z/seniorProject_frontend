@@ -24,11 +24,11 @@
     </div>
     <canvas ref="myChart"></canvas>
     <div v-if="!showChart" class="rounded-lg shadow-lg p-6">
-      <p class="text-white bg-red-500">Summary of trips</p>
+      <p class="text-white bg-red-600">Summary of trips</p>
       <p>Electric Vehecle using cost = {{ cost }} THB</p>
       <p>Old car(Fuel car) = 1750.28 THB</p>
       <p>
-        Summary is EV using cost less than fuel cars is {{ summaryCost }} THB
+        Summary is EV using cost less than Fuel cars is {{ summaryCost }} THB
       </p>
     </div>
     <!-- <div v-if="!showChart" class="rounded-lg shadow-lg p-6">

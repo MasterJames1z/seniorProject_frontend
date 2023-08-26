@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto p-1 px-4 bg-gray-200 dark:bg-gray-300">
+  <div class="mx-auto p-1 px-4 bg-white dark:bg-white">
     <div
       class="h-full p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
     >
