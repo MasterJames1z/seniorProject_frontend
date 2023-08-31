@@ -412,9 +412,10 @@ export default {
     return {
       sum: 0,
       currentUser: this.GStore.currentUser,
+      totalCost: this.GStore.totalCost,
       isPopupVisible: false,
       cost: null,
-      totalCost: null,
+      // totalCost: null,
     };
   },
   methods: {
@@ -432,9 +433,9 @@ export default {
     },
     submitForm(event) {
       event.preventDefault();
-      this.totalCost += this.cost;
+      this.GStore.totalCost += this.cost;
       this.cost = null;
-      console.log(this.totalCost);
+      console.log(this.GStore.totalCost);
     },
   },
 };

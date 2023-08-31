@@ -1,4 +1,5 @@
 <template>
+  {{ GStore.totalCost }}
   <div
     v-if="!currentUser"
     class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
