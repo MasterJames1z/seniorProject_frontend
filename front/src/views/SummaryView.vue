@@ -1,4 +1,5 @@
 <template>
+  {{ totalCost }}
   <div class="app">
     <BarChart />
   </div>
@@ -8,8 +9,14 @@
 import BarChart from "../components/BarChart.vue";
 
 export default {
+  inject: ["GStore"],
   components: {
     BarChart,
+  },
+  data: function () {
+    return {
+      totalCost: this.GStore.totalCost,
+    };
   },
 };
 </script>
