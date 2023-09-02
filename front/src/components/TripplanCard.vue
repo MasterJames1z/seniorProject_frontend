@@ -173,6 +173,79 @@
               </h5>
             </a>
             <div>
+              <h5
+                class="m-auto mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-black"
+              >
+                Details of {{ tripcard.province }}:
+              </h5>
+              <a
+                :href="generateMap()"
+                target="_blank"
+                class="inline-flex items-center text-green-600 hover:underline"
+              >
+                {{ tripcard.station_in.chager_1.name }}
+                <svg
+                  class="w-3 h-3 ml-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 18 18"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
+                  />
+                </svg> </a
+              ><br />
+              <a
+                :href="generateMap()"
+                target="_blank"
+                class="inline-flex items-center text-green-600 hover:underline"
+              >
+                {{ tripcard.station_in.chager_2.name }}
+                <svg
+                  class="w-3 h-3 ml-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 18 18"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
+                  />
+                </svg> </a
+              ><br />
+              <a
+                :href="generateMap()"
+                target="_blank"
+                class="inline-flex items-center text-green-600 hover:underline"
+              >
+                {{ tripcard.station_in.chager_3.name }}
+                <svg
+                  class="w-3 h-3 ml-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 18 18"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div>
               <button
                 @click="showPopup"
                 class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
@@ -186,84 +259,57 @@
                 <div class="bg-white p-6 rounded shadow-md">
                   <!-- Card details content goes here -->
                   <div>
-                    <h5
-                      class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-black"
+                    <button
+                      @click="showPopup"
+                      class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
                     >
-                      Details of {{ tripcard.province }}:
-                    </h5>
-                    <a
-                      :href="generateMap()"
-                      target="_blank"
-                      class="inline-flex items-center text-green-600 hover:underline"
+                      Do you charge on there?
+                    </button>
+                    <div
+                      v-if="isPopupVisible"
+                      class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
                     >
-                      {{ tripcard.station_in.chager_1.name }}
-                      <svg
-                        class="w-3 h-3 ml-2.5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
-                        />
-                      </svg> </a
-                    ><br />
-                    <a
-                      :href="generateMap()"
-                      target="_blank"
-                      class="inline-flex items-center text-green-600 hover:underline"
-                    >
-                      {{ tripcard.station_in.chager_2.name }}
-                      <svg
-                        class="w-3 h-3 ml-2.5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
-                        />
-                      </svg> </a
-                    ><br />
-                    <a
-                      :href="generateMap()"
-                      target="_blank"
-                      class="inline-flex items-center text-green-600 hover:underline"
-                    >
-                      {{ tripcard.station_in.chager_3.name }}
-                      <svg
-                        class="w-3 h-3 ml-2.5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
-                        />
-                      </svg>
-                    </a>
+                      <div class="bg-white p-6 rounded shadow-md">
+                        <!-- Card details content goes here -->
+
+                        <form @submit="submitForm" class="space-y-4">
+                          <div>
+                            <label
+                              for="cost"
+                              class="block text-sm font-medium text-gray-700"
+                              >Cost of Charge</label
+                            >
+                            <input
+                              v-model="cost"
+                              type="number"
+                              id="cost"
+                              name="cost"
+                              class="mt-1 p-2 border w-full rounded-md"
+                            />
+                          </div>
+                          <button
+                            type="submit"
+                            class="px-4 py-2 bg-blue-500 text-white rounded-md"
+                          >
+                            Submit
+                          </button>
+                          <!-- <p>Total Cost: {{ totalCost }}</p> -->
+                        </form>
+                        <button
+                          @click="closePopup"
+                          class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded mt-4"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                  <button
+                  <!-- <button
                     @click="openPopup"
                     class="m-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded mt-4"
                   >
                     OK
-                  </button>
+                  </button> -->
                   <button
                     @click="closePopup"
                     class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded mt-4"
@@ -297,6 +343,79 @@
               </h5>
             </a>
             <div>
+              <h5
+                class="m-auto mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-black"
+              >
+                Details of {{ tripcard.province }}:
+              </h5>
+              <a
+                :href="generateMap()"
+                target="_blank"
+                class="inline-flex items-center text-green-600 hover:underline"
+              >
+                {{ tripcard.station_in.chager_1.name }}
+                <svg
+                  class="w-3 h-3 ml-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 18 18"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
+                  />
+                </svg> </a
+              ><br />
+              <a
+                :href="generateMap()"
+                target="_blank"
+                class="inline-flex items-center text-green-600 hover:underline"
+              >
+                {{ tripcard.station_in.chager_2.name }}
+                <svg
+                  class="w-3 h-3 ml-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 18 18"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
+                  />
+                </svg> </a
+              ><br />
+              <a
+                :href="generateMap()"
+                target="_blank"
+                class="inline-flex items-center text-green-600 hover:underline"
+              >
+                {{ tripcard.station_in.chager_3.name }}
+                <svg
+                  class="w-3 h-3 ml-2.5"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 18 18"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div>
               <button
                 @click="showPopup"
                 class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
@@ -309,79 +428,7 @@
               >
                 <div class="bg-white p-6 rounded shadow-md">
                   <!-- Card details content goes here -->
-                  <div>
-                    <h5
-                      class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-black"
-                    >
-                      Details of {{ tripcard.province }}:
-                    </h5>
-                    <a
-                      :href="generateMap()"
-                      target="_blank"
-                      class="inline-flex items-center text-green-600 hover:underline"
-                    >
-                      {{ tripcard.station_in.chager_1.name }}
-                      <svg
-                        class="w-3 h-3 ml-2.5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
-                        />
-                      </svg> </a
-                    ><br />
-                    <a
-                      :href="generateMap()"
-                      target="_blank"
-                      class="inline-flex items-center text-green-600 hover:underline"
-                    >
-                      {{ tripcard.station_in.chager_2.name }}
-                      <svg
-                        class="w-3 h-3 ml-2.5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
-                        />
-                      </svg> </a
-                    ><br />
-                    <a
-                      :href="generateMap()"
-                      target="_blank"
-                      class="inline-flex items-center text-green-600 hover:underline"
-                    >
-                      {{ tripcard.station_in.chager_3.name }}
-                      <svg
-                        class="w-3 h-3 ml-2.5"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                      >
-                        <path
-                          stroke="currentColor"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
-                        />
-                      </svg>
-                    </a>
-                  </div>
+
                   <button
                     @click="closePopup"
                     class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded mt-4"
