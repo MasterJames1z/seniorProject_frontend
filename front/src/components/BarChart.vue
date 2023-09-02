@@ -1,26 +1,7 @@
 <template>
   <div class="chart-container">
     <div v-if="showChart" class="p-8">
-      <form @submit.prevent="submitForm" class="space-y-4">
-        <div>
-          <label for="cost" class="block text-sm font-medium text-gray-700"
-            >Cost of Charge</label
-          >
-          <input
-            v-model="cost"
-            type="number"
-            id="cost"
-            name="cost"
-            class="mt-1 p-2 border w-full rounded-md"
-          />
-        </div>
-        <button
-          type="submit"
-          class="px-4 py-2 bg-blue-500 text-white rounded-md"
-        >
-          Submit
-        </button>
-      </form>
+      <button @click="submitForm">submitForm</button>
     </div>
     <canvas ref="myChart"></canvas>
     <div v-if="!showChart" class="rounded-lg shadow-lg p-6">
@@ -55,6 +36,7 @@ import {
 Chart.register(CategoryScale, LinearScale, BarController, BarElement);
 
 export default {
+  inject: ["GStore"],
   // mounted() {
   //   this.renderChart();
   // },
@@ -85,11 +67,11 @@ export default {
       });
     },
     submitForm() {
-      console.log(this.cost);
-      this.yValues = [this.cost, 1750.28];
+      console.log(this.totalCost);
+      this.yValues = [this.totalCost, 1750.28];
       this.renderChart();
       this.showChart = false;
-      this.summaryCost = 1750.28 - this.cost;
+      this.summaryCost = 1750.28 - this.totalCost;
     },
   },
   data() {
@@ -100,6 +82,7 @@ export default {
       cost: null,
       showChart: true,
       summaryCost: null,
+      totalCost: this.GStore.totalCost,
     };
   },
 };

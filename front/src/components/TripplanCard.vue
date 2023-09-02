@@ -258,58 +258,30 @@
               >
                 <div class="bg-white p-6 rounded shadow-md">
                   <!-- Card details content goes here -->
-                  <div>
-                    <button
-                      @click="showPopup"
-                      class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-                    >
-                      Do you charge on there?
-                    </button>
-                    <div
-                      v-if="isPopupVisible"
-                      class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
-                    >
-                      <div class="bg-white p-6 rounded shadow-md">
-                        <!-- Card details content goes here -->
 
-                        <form @submit="submitForm" class="space-y-4">
-                          <div>
-                            <label
-                              for="cost"
-                              class="block text-sm font-medium text-gray-700"
-                              >Cost of Charge</label
-                            >
-                            <input
-                              v-model="cost"
-                              type="number"
-                              id="cost"
-                              name="cost"
-                              class="mt-1 p-2 border w-full rounded-md"
-                            />
-                          </div>
-                          <button
-                            type="submit"
-                            class="px-4 py-2 bg-blue-500 text-white rounded-md"
-                          >
-                            Submit
-                          </button>
-                          <!-- <p>Total Cost: {{ totalCost }}</p> -->
-                        </form>
-                        <button
-                          @click="closePopup"
-                          class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded mt-4"
-                        >
-                          Close
-                        </button>
-                      </div>
+                  <form @submit="submitForm" class="space-y-4">
+                    <div>
+                      <label
+                        for="cost"
+                        class="block text-sm font-medium text-gray-700"
+                        >Cost of Charge</label
+                      >
+                      <input
+                        v-model="cost"
+                        type="number"
+                        id="cost"
+                        name="cost"
+                        class="mt-1 p-2 border w-full rounded-md"
+                      />
                     </div>
-                  </div>
-                  <!-- <button
-                    @click="openPopup"
-                    class="m-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded mt-4"
-                  >
-                    OK
-                  </button> -->
+                    <button
+                      type="submit"
+                      class="px-4 py-2 bg-blue-500 text-white rounded-md"
+                    >
+                      Submit
+                    </button>
+                    <!-- <p>Total Cost: {{ totalCost }}</p> -->
+                  </form>
                   <button
                     @click="closePopup"
                     class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded mt-4"
@@ -422,12 +394,36 @@
               >
                 Do you charge on there?
               </button>
+
               <div
                 v-if="isPopupVisible"
                 class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
               >
                 <div class="bg-white p-6 rounded shadow-md">
                   <!-- Card details content goes here -->
+                  <form @submit="submitForm" class="space-y-4">
+                    <div>
+                      <label
+                        for="cost"
+                        class="block text-sm font-medium text-gray-700"
+                        >Cost of Charge</label
+                      >
+                      <input
+                        v-model="cost"
+                        type="number"
+                        id="cost"
+                        name="cost"
+                        class="mt-1 p-2 border w-full rounded-md"
+                      />
+                    </div>
+                    <button
+                      type="submit"
+                      class="px-4 py-2 bg-blue-500 text-white rounded-md"
+                    >
+                      Submit
+                    </button>
+                    <!-- <p>Total Cost: {{ totalCost }}</p> -->
+                  </form>
 
                   <button
                     @click="closePopup"
@@ -443,6 +439,14 @@
       </li>
     </ol>
   </div>
+  <!-- <div>
+    <button
+      @click="openPopup"
+      class="m-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded mt-4"
+    >
+      OK
+    </button>
+  </div> -->
 </template>
 
 <script>
