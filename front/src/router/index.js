@@ -8,6 +8,8 @@ import FindNearView from "../views/FindNearView.vue";
 import TripPlanViewView from "../views/TripPlanView.vue";
 import CheckTripView from "../views/CheckTripView.vue";
 import SummaryView from "../views/SummaryView.vue";
+import ProfileView from "../views/ProfileView.vue";
+import HistoryView from "../views/TripplanHistory.vue";
 
 const routes = [
   {
@@ -63,6 +65,16 @@ const routes = [
     path: "/summary",
     name: "summary",
     component: SummaryView,
+  },
+  {
+    path: "/profile",
+    name: "profile",
+    component: ProfileView,
+  },
+  {
+    path: "/history",
+    name: "history",
+    component: HistoryView,
   },
 ];
 

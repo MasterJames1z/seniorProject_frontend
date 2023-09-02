@@ -80,6 +80,40 @@
             </div>
             <div>
               <label
+                for="car"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Car</label
+              >
+              <Field
+                type="car"
+                name="car"
+                v-model="car"
+                id="car"
+                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="car"
+                required=""
+              />
+              <ErrorMessage name="car" class="text-yellow-600" />
+            </div>
+            <div>
+              <label
+                for="battery"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Battery</label
+              >
+              <Field
+                type="battery"
+                name="battery"
+                v-model="battery"
+                id="battery"
+                class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="battery"
+                required=""
+              />
+              <ErrorMessage name="battery" class="text-yellow-600" />
+            </div>
+            <div>
+              <label
                 for="distance"
                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >Distance</label
@@ -128,6 +162,8 @@ export default {
       confirmPassword: "",
       confirmPasswordError: false,
       distance: "",
+      battery: "",
+      car: "",
       schema: yup.object().shape({
         username: yup.string().required("Username is required!"),
         password: yup.string().required("Password is required!"),
@@ -148,6 +184,8 @@ export default {
         username: this.username,
         password: this.password,
         distance: this.distance,
+        battery: this.battery,
+        car: this.car,
       };
       AuthService.register(user)
         .then((response) => {
