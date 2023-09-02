@@ -14,7 +14,7 @@
           class="w-64 px-4 py-2 border border-gray-300 rounded-md"
         >
           <!-- <option value="" disabled>Select starting point</option> -->
-          <option value="location1">เชียงใหม่</option>
+          <option value="เชียงใหม่">เชียงใหม่</option>
         </select>
         <label class="text-gray-700 mb-2 mt-5">Destination:</label>
         <select
@@ -22,7 +22,7 @@
           class="w-64 px-4 py-2 border border-gray-300 rounded-md"
         >
           <!-- <option value="" disabled>Select destination</option> -->
-          <option value="locationA">กรุงเทพ</option>
+          <option value="กรุงเทพ">กรุงเทพ</option>
         </select>
 
         <!-- <button
@@ -45,7 +45,7 @@
           <input type="checkbox" class="mr-2" v-model="showTemplates" />
           <label class="text-gray-700">Filter</label>
         </div>
-        <div class="flex mt-9">
+        <div v-if="showTemplates" class="flex mt-9">
           Type:
           <div class="mt-8">
             <input type="checkbox" class="mr-2" v-model="acType" />
@@ -54,7 +54,7 @@
             <label class="text-gray-700 mr-2">DC Type</label>
           </div>
         </div>
-        <div class="flex mt-9">
+        <div v-if="showTemplates" class="flex mt-9">
           Service:
           <div class="grid grid-cols-6 mt-8">
             <input type="checkbox" class="mr-2" v-model="ev" />
@@ -154,24 +154,32 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
+import HistoryService from "@/services/HistoryService";
 export default {
   inject: ["GStore"],
   data() {
     return {
-      inputValues: {
-        origin: "",
-        destination: "",
-        location1: "เชียงใหม่",
-        locationA: "กรุงเทพ",
-      },
-      distance: null,
-      duration: null,
+      origin: "",
+      destination: "",
+      location1: "เชียงใหม่",
+      locationA: "กรุงเทพ",
+      distance: 0,
+      duration: 0,
       showTemplates: false,
       filter: false,
       showButtonRoad: false,
       isPlanButtonDisabled: true,
       noTi: false,
+      acType: false,
+      dcType: false,
+      ev: false,
+      elexa: false,
+      mea: false,
+      pea: false,
+      ea: false,
+      evolt: false,
+      mg: false,
     };
   },
   computed: {
@@ -181,32 +189,45 @@ export default {
     currentUser() {
       return this.GStore.currentUser;
     },
+    // selectedFiltersData() {
+    //   return {
+    //     acType: this.acType,
+    //     dcType: this.dcType,
+    //     ev: this.ev,
+    //     elexa: this.elexa,
+    //     mea: this.mea,
+    //     pea: this.pea,
+    //     ea: this.ea,
+    //     evolt: this.evolt,
+    //     mg: this.mg,
+    //   };
+    // },
   },
   methods: {
-    calculateButtonPressed() {
-      if (!this.origin || !this.destination) {
-        this.errorMessage = "Please enter both origin and destination.";
-        return;
-      }
-      const apiKey = "AIzaSyAAUnokPnN8yWpQqaf5rFPIWrqyM26f1E4";
-      const origin = encodeURIComponent(this.origin);
-      const destination = encodeURIComponent(this.destination);
-      const URL = `http://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/distancematrix/json?origins=${origin}&destinations=${destination}&key=${apiKey}`;
-      axios
-        .get(URL)
-        .then((response) => {
-          const result = response.data.rows[0].elements[0];
-          this.distance = result.distance.text;
-          this.duration = result.duration.text;
-          console.log("Distance:", this.distance);
-          console.log("Duration:", this.duration);
-          this.errorMessage = "";
-        })
-        .catch((error) => {
-          console.log(error.message);
-          this.errorMessage = "Error calculating distance. Please try again.";
-        });
-    },
+    // calculateButtonPressed() {
+    //   if (!this.origin || !this.destination) {
+    //     this.errorMessage = "Please enter both origin and destination.";
+    //     return;
+    //   }
+    //   const apiKey = "AIzaSyAAUnokPnN8yWpQqaf5rFPIWrqyM26f1E4";
+    //   const origin = encodeURIComponent(this.origin);
+    //   const destination = encodeURIComponent(this.destination);
+    //   const URL = `http://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/distancematrix/json?origins=${origin}&destinations=${destination}&key=${apiKey}`;
+    //   axios
+    //     .get(URL)
+    //     .then((response) => {
+    //       const result = response.data.rows[0].elements[0];
+    //       this.distance = result.distance.text;
+    //       this.duration = result.duration.text;
+    //       console.log("Distance:", this.distance);
+    //       console.log("Duration:", this.duration);
+    //       this.errorMessage = "";
+    //     })
+    //     .catch((error) => {
+    //       console.log(error.message);
+    //       this.errorMessage = "Error calculating distance. Please try again.";
+    //     });
+    // },
     roadmapButtonPressed() {
       this.$router.push({ name: "checktrip" });
     },
@@ -214,13 +235,66 @@ export default {
       if (!this.origin || !this.destination) {
         return; // Exit the method if either origin or destination is not selected
       }
-      (this.origin = "เชียงใหม่"), (this.destination = "กรุงเทพ");
-      this.distance = "701 KM";
-      this.duration = "9 hours 1 min";
+      (this.distance = 701), (this.duration = "9 hr 1 min");
+
+      if (this.showTemplates) {
+        const checkFilter = {
+          user_id: this.GStore.currentUser.id,
+          origin: this.origin,
+          destination: this.destination,
+          distance: this.distance,
+          duration: this.duration,
+          ac_type: this.acType,
+          dc_type: this.dcType,
+          ev: this.ev,
+          elexa: this.elexa,
+          mea: this.mea,
+          pea: this.pea,
+          ea: this.ea,
+          evolt: this.evolt,
+          mg: this.mg,
+        };
+        console.log(checkFilter);
+        HistoryService.upload_tripplan(checkFilter).then(() => {
+          const id = {
+            user_id: this.GStore.currentUser.id,
+          };
+          HistoryService.get_tripplan(id);
+        });
+      } else {
+        const checkFilter = {
+          user_id: this.GStore.currentUser.id,
+          origin: this.origin,
+          destination: this.destination,
+          distance: this.distance,
+          duration: this.duration,
+          ac_type: this.acType,
+          dc_type: this.dcType,
+          ev: this.ev,
+          elexa: this.elexa,
+          mea: this.mea,
+          pea: this.pea,
+          ea: this.ea,
+          evolt: this.evolt,
+          mg: this.mg,
+        };
+        console.log(checkFilter);
+        HistoryService.upload_tripplan(checkFilter).then(() => {
+          const id = {
+            user_id: this.GStore.currentUser.id,
+          };
+          console.log(id);
+          HistoryService.get_tripplan(id);
+        });
+      }
+      // (this.origin = "เชียงใหม่"), (this.destination = "กรุงเทพ");
+      // this.distance = "701 KM";
+      // this.duration = "9 hours 1 min";
       this.showButtonRoad = true;
-      this.isPlanButtonDisabled = false;
-      this.noTi = true;
-      console.log(this.origin, this.destination, this.distance, this.duration);
+      // this.isPlanButtonDisabled = false;
+      // this.noTi = true;
+      // // const selectedFilters = this.selectedFiltersData;
+      // console.log(this.origin, this.destination, this.distance, this.duration);
     },
     closeNoti() {
       this.$router.push({ name: "tripplan" });
