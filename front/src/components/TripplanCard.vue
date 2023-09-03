@@ -439,14 +439,14 @@
       </li>
     </ol>
   </div>
-  <!-- <div>
+  <div>
     <button
       @click="openPopup"
       class="m-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded mt-4"
     >
-      OK
+      Go to the summary
     </button>
-  </div> -->
+  </div>
 </template>
 
 <script>
