@@ -1,5 +1,5 @@
 <template>
-  {{ totalCost }}
+  <!-- {{ totalCost }} -->
   <div class="app">
     <BarChart />
   </div>
