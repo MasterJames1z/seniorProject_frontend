@@ -161,8 +161,8 @@
           <div v-if="showTemplates && errorMessage" class="mt-4">
             <p class="text-red-500">{{ errorMessage }}</p>
           </div>
-          <div v-if="showButtonRoad">
-            <div>
+          <div>
+            <div v-if="showButtonRoad">
               <button
                 @click="roadmapButtonPressed"
                 class="mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
@@ -302,6 +302,10 @@ export default {
     //     });
     // },
     roadmapButtonPressed() {
+      if (!this.currentUser) {
+        this.showLogin = true;
+        return;
+      }
       this.$router.push({ name: "checktrip" });
     },
     calculateButtonPressednonSearch() {
