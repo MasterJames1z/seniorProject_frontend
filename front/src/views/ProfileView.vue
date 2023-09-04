@@ -37,8 +37,8 @@
           <div class="text-center my-3">
             <a
               class="text-xs text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium"
-              href="/tripplan"
-              >Let's Plan</a
+              href="/history"
+              >History</a
             >
           </div>
         </div>
