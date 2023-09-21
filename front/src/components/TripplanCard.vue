@@ -88,7 +88,6 @@
                   >
                     Submit
                   </button>
-                  <!-- <p>Total Cost: {{ totalCost }}</p> -->
                 </form>
                 <button
                   @click="closePopup"
@@ -186,7 +185,6 @@
                   >
                     Submit
                   </button>
-                  <!-- <p>Total Cost: {{ totalCost }}</p> -->
                 </form>
                 <button
                   @click="closePopup"

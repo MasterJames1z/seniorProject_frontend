@@ -1,6 +1,7 @@
 <template>
   <!-- {{ totalCost }} -->
-  <div class="app">
+  <!-- <h1>Summary of plan</h1> -->
+  <div class="app bg-green-800">
     <BarChart />
   </div>
 </template>

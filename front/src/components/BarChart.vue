@@ -1,7 +1,8 @@
 <template>
-  <div class="chart-container">
+  <div class="bg-white mx-auto p-1 px-4 chart-container rounded-lg shadow-lg">
+    <h1 class="bold text-xl">Summarize of plan</h1>
     <canvas ref="myChart"></canvas>
-    <div v-if="!showChart" class="rounded-lg shadow-lg p-6">
+    <div v-if="!showChart" class="bg-white rounded-lg shadow-lg p-6">
       <p class="text-white bg-red-600">Summary of trips</p>
       <p>Electric Vehecle using cost = {{ totalCost }} THB</p>
       <p>Fuel car = 1750.28 THB</p>
@@ -11,11 +12,14 @@
     </div>
     <div v-if="!showChart" class="rounded-lg shadow-lg p-6">
       <p class="bg-red-500">**note**</p>
-      <p>รถที่ใช้เปรียบเทียบ: civic 1.5 el ขนาดถังน้ำมัน 40 ลิตร</p>
-      <p>มีอัตราการกินน้ำมันอยู่ที่ 15 กิโลเมตร/ลิตร</p>
-      <p>ระยะทางที่ใช้เดินทาง 701 กิโลเมตร</p>
-      <P>ใช้น้ำมัน e20s ราคาน้ำมันอยู่ที่ 37.24 บาท/ลิตร</P>
-      <p>ดังนั้นจะใช้น้ำมันทั้งหมด 47 ลิตร ราคารวมอยู่ที่ 1750.28 บาท</p>
+      <p>Car used for comparison: civic 1.5 el, fuel tank size 40 liters</p>
+      <p>It has a fuel consumption rate of 15 kilometers/liter.</p>
+      <p>Distance traveled: 701 kilometers.</p>
+      <P>Using E20S oil, the price of oil is 37.24 baht/liter.</P>
+      <p>
+        Therefore, a total of 47 liters of oil will be used. The total price is
+        1750.28 baht.
+      </p>
     </div>
   </div>
 </template>

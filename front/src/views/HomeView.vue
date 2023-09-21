@@ -126,13 +126,6 @@
         </div>
       </div>
     </main>
-
-    <!-- Footer section -->
-    <footer class="bg-gray-800 text-white py-4">
-      <div class="container mx-auto px-4">
-        <p class="text-center">&copy; 2023 EV Better. All rights reserved.</p>
-      </div>
-    </footer>
   </div>
 </template>
 

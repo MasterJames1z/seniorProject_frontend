@@ -1,180 +1,192 @@
 <template>
-  <div
-    v-if="showLogin"
-    class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
-  >
-    <div class="relative w-full max-w-md max-h-full">
-      <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-        <button
-          @click="closeNoti"
-          type="button"
-          class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-          data-modal-hide="popup-modal"
-        >
-          <svg
-            class="w-3 h-3"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 14"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-            />
-          </svg>
-          <span class="sr-only">Close modal</span>
-        </button>
-        <div class="p-6 text-center">
-          <svg
-            class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 20 20"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-            />
-          </svg>
-          <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
-            You need to login before.
-          </h3>
+  <body class="bg-green-800">
+    <div
+      v-if="showLogin"
+      class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+    >
+      <div class="relative w-full max-w-md max-h-full">
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
           <button
-            @click="loginBefore"
-            data-modal-hide="popup-modal"
+            @click="closeNoti"
             type="button"
-            class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2"
+            class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+            data-modal-hide="popup-modal"
           >
-            Yes, I'm sure
+            <svg
+              class="w-3 h-3"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+              />
+            </svg>
+            <span class="sr-only">Close modal</span>
           </button>
+          <div class="p-6 text-center">
+            <svg
+              class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 20 20"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              />
+            </svg>
+            <h3
+              class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400"
+            >
+              You need to login before.
+            </h3>
+            <button
+              @click="loginBefore"
+              data-modal-hide="popup-modal"
+              type="button"
+              class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2"
+            >
+              Yes, I'm sure
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="grid grid-cols-1 sm:grid-cols-2 mx-auto p-1 px-4 h-screen">
-    <div class="w-full">
-      Trip plan
-      <div class="flex flex-col items-center mt-8 rounded-lg shadow-lg p-6">
-        <!-- By Search province -->
-        <!-- <label class="text-gray-700 mb-2">Starting point:</label>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto p-1 px-4 h-screen"
+    >
+      <div class="w-full">
+        <div
+          class="bg-white flex flex-col items-center mt-8 rounded-lg shadow-lg p-6"
+        >
+          Normal search
+          <!-- By Search province -->
+          <!-- <label class="text-gray-700 mb-2">Starting point:</label>
         <input v-model="origin" type="text" class="w-64 px-4 py-2 border border-gray-300 rounded-md" />
         <label class="text-gray-700 mt-4 mb-2">Destination:</label>
         <input v-model="destination" type="text" class="w-64 px-4 py-2 border border-gray-300 rounded-md" /> -->
-        <label class="text-gray-700 mb-2">Starting point:</label>
-        <select
-          v-model="origin"
-          class="w-64 px-4 py-2 border border-gray-300 rounded-md"
-        >
-          <!-- <option value="" disabled>Select starting point</option> -->
-          <option value="Chiang Mai">Chiang Mai</option>
-        </select>
-        <label class="text-gray-700 mb-2 mt-5">Destination:</label>
-        <select
-          v-model="destination"
-          class="w-64 px-4 py-2 border border-gray-300 rounded-md"
-        >
-          <!-- <option value="" disabled>Select destination</option> -->
-          <option value="Bangkok">Bangkok</option>
-        </select>
+          <div class="flex mt-3">
+            <input type="checkbox" class="mr-2" v-model="showTemplates" />
+            <label class="text-gray-700">Filter</label>
+          </div>
+          <label class="text-gray-700 mt-5 mb-2">Starting point:</label>
+          <select
+            v-model="origin"
+            class="w-64 px-4 py-2 border border-gray-300 rounded-md"
+          >
+            <!-- <option value="" disabled>Select starting point</option> -->
+            <option value="Chiang Mai">Chiang Mai</option>
+          </select>
+          <label class="text-gray-700 mb-2 mt-5">Destination:</label>
+          <select
+            v-model="destination"
+            class="w-64 px-4 py-2 border border-gray-300 rounded-md"
+          >
+            <!-- <option value="" disabled>Select destination</option> -->
+            <option value="Bangkok">Bangkok</option>
+          </select>
 
-        <div v-if="showError" class="text-red-500 text-sm mt-2">
-          Please select both starting point and destination.
-        </div>
-        <button
-          v-if="!showTemplates"
-          @click="calculateButtonPressed"
-          class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        >
-          Plan now
-        </button>
-        <!-- <button
+          <div v-if="showError" class="text-red-500 text-sm mt-2">
+            Please select both starting point and destination.
+          </div>
+          <button
+            v-if="!showTemplates"
+            @click="calculateButtonPressed"
+            class="mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Plan now
+          </button>
+          <!-- <button
           v-if="!showTemplates"
           @click="calculateButtonPressednonSearch"
           class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         >
           Plan now
         </button> -->
-      </div>
-      <div class="rounded-lg shadow-lg p-6">
-        <div class="flex mt-9">
-          <input type="checkbox" class="mr-2" v-model="showTemplates" />
-          <label class="text-gray-700">Filter</label>
-        </div>
-        <div v-if="showTemplates" class="flex mt-9">
-          Type:
-          <div class="mt-8">
-            <input type="checkbox" class="mr-2" v-model="acType" />
-            <label class="text-gray-700 mr-2">AC Type</label>
-            <input type="checkbox" class="mr-2" v-model="dcType" />
-            <label class="text-gray-700 mr-2">DC Type</label>
+          <!-- </div>
+        <div class="mx-auto p-1 px-4"></div>
+        <div class="bg-white rounded-lg shadow-lg p-6 mx-auto p-1 px-4"> -->
+          <div v-if="showTemplates" class="flex mt-9">
+            Type:
+            <div class="mt-8">
+              <input type="checkbox" class="mr-2" v-model="acType" />
+              <label class="text-gray-700 mr-2">AC Type</label>
+              <input type="checkbox" class="mr-2" v-model="dcType" />
+              <label class="text-gray-700 mr-2">DC Type</label>
+            </div>
           </div>
-        </div>
-        <div v-if="showTemplates" class="flex mt-9">
-          Service:
-          <div class="grid grid-cols-6 mt-8">
-            <input type="checkbox" class="mr-2" v-model="ev" />
-            <label class="text-gray-700 mr-2">PTT</label>
-            <input type="checkbox" class="mr-2" v-model="elexa" />
-            <label class="text-gray-700 mr-2">EleXA</label>
-            <input type="checkbox" class="mr-2" v-model="mea" />
-            <label class="text-gray-700 mr-2">MEA</label>
-            <input type="checkbox" class="mr-2" v-model="pea" />
-            <label class="text-gray-700 mr-2">PEA</label>
-            <input type="checkbox" class="mr-2" v-model="ea" />
-            <label class="text-gray-700 mr-2">EA</label>
-            <input type="checkbox" class="mr-2" v-model="evolt" />
-            <label class="text-gray-700 mr-2">EVolt</label>
-            <input type="checkbox" class="mr-2" v-model="mg" />
-            <label class="text-gray-700 mr-2">MG</label>
+          <div v-if="showTemplates" class="flex mt-9">
+            Service:
+            <div class="grid grid-cols-6 mt-8">
+              <input type="checkbox" class="" v-model="ev" />
+              <label class="text-gray-700">PTT</label>
+              <input type="checkbox" class="" v-model="elexa" />
+              <label class="text-gray-700">EleXA</label>
+              <input type="checkbox" class="" v-model="mea" />
+              <label class="text-gray-700">MEA</label>
+              <input type="checkbox" class="" v-model="pea" />
+              <label class="text-gray-700">PEA</label>
+              <input type="checkbox" class="" v-model="ea" />
+              <label class="text-gray-700">EA</label>
+              <input type="checkbox" class="" v-model="evolt" />
+              <label class="text-gray-700">EVolt</label>
+              <input type="checkbox" class="" v-model="mg" />
+              <label class="text-gray-700">MG</label>
+            </div>
           </div>
-        </div>
-        <div v-if="showTemplates">
-          <div>
-            <button
-              @click="calculateButtonPressednonSearch"
-              class="mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-            >
-              Plan now
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div>
-      Result for plan
-      <div class="flex items-center justify-center bg-white">
-        <div class="grid grid-cols-1 rounded-lg shadow-lg p-6">
-          <p>Starting point: {{ origin }}</p>
-          <p>Destination: {{ destination }}</p>
-          <div v-if="distance" class="mt-4">
-            <p class="text-gray-700">Distance: {{ distance }}</p>
-            <p class="text-gray-700">Duration: {{ duration }}</p>
-          </div>
-          <div v-if="showTemplates && errorMessage" class="mt-4">
-            <p class="text-red-500">{{ errorMessage }}</p>
-          </div>
-          <div>
-            <div v-if="showButtonRoad">
+          <div v-if="showTemplates">
+            <div>
               <button
-                @click="roadmapButtonPressed"
-                class="mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                @click="calculateButtonPressed"
+                class="mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
               >
-                Go to road map
+                Plan now
               </button>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- <div
+      <div class="w-full">
+        <div
+          class="bg-white flex flex-col items-center mt-8 rounded-lg shadow-lg p-6"
+        >
+          <h1>Result for plan</h1>
+          <div class="flex items-center justify-center bg-white">
+            <div class="grid grid-cols-1">
+              <p>Starting point: {{ origin }}</p>
+              <p>Destination: {{ destination }}</p>
+              <div v-if="distance" class="mt-4">
+                <p class="text-gray-700">Distance: {{ distance }}</p>
+                <p class="text-gray-700">Duration: {{ duration }}</p>
+              </div>
+              <div v-if="showTemplates && errorMessage" class="mt-4">
+                <p class="text-red-500">{{ errorMessage }}</p>
+              </div>
+              <div>
+                <div v-if="showButtonRoad">
+                  <button
+                    @click="roadmapButtonPressed"
+                    class="mt-4 bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"
+                  >
+                    Go to road map
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div
       v-if="noTi"
       id="toast-bottom-right"
       class="fixed flex items-center max-w-xs p-4 space-x-4 text-gray-500 bg-white divide-x divide-gray-200 rounded-lg shadow right-5 bottom-5 dark:text-gray-400 dark:divide-gray-700 space-x dark:bg-gray-800"
@@ -213,7 +225,8 @@
         </button>
       </div>
     </div> -->
-  </div>
+    </div>
+  </body>
 </template>
 
 <script>
@@ -357,6 +370,7 @@ export default {
           HistoryService.get_tripplan(id);
         });
       }
+      this.showButtonRoad = true;
     },
     roadmapButtonPressed() {
       if (!this.currentUser) {
