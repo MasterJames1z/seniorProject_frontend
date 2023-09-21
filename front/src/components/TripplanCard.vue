@@ -1,83 +1,43 @@
 <template>
-  <div class="flex justify-center">
-    <ol class="border-l border-neutral-300 dark:border-neutral-500">
-      <!--First item-->
-      <li v-if="tripcard.distance < currentUser.distance * 0.9">
-        <div class="flex-start flex items-center pt-3">
+  <body class="bg-green-900">
+    <div class="container">
+      <div class="flex flex-col md:grid grid-cols-12 text-gray-50">
+        <div
+          v-if="tripcard.distance < currentUser.distance"
+          class="flex md:contents"
+        >
+          <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
+            <div class="h-full w-6 flex items-center justify-center">
+              <div class="h-full w-1 bg-green-500 pointer-events-none"></div>
+            </div>
+            <div
+              class="flex justify-center w-7 h-7 absolute top-1/2 -mt-3 rounded-full bg-green-500 shadow text-center"
+            >
+              <i class="fas fa-check-circle text-white">{{
+                tripcard.distance
+              }}</i>
+            </div>
+          </div>
           <div
-            class="-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-green-500 dark:bg-green-700"
-          ></div>
-          <p class="text-sm text-neutral-500 dark:text-neutral-300">
-            {{ tripcard.distance }}
-          </p>
-        </div>
-        <div class="mb-6 ml-4 mt-2">
-          <div
-            class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            class="bg-green-500 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full"
           >
-            <a href="#">
-              <h5
-                class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white"
-              >
-                {{ tripcard.province }}
-              </h5>
-            </a>
-            <div>
-              <h5
-                class="m-auto mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-black"
-              >
-                Details of {{ tripcard.province }}:
-              </h5>
+            <h1 class="font-semibold text-xl mb-1">
+              {{ tripcard.province }}
+            </h1>
+            <p class="leading-tight text-justify w-full">
+              Recommend station in {{ tripcard.province }}
+            </p>
+            <div
+              v-for="detail in tripcard.station_in"
+              :key="detail.tripcard"
+              :tripcard="detail"
+            >
               <a
                 :href="generateMap()"
                 target="_blank"
-                class="inline-flex items-center text-green-600 hover:underline"
+                class="inline-flex items-center text-white hover:underline"
               >
-                {{ tripcard.station_in.chager_1.name }}
-                <svg
-                  class="w-3 h-3 ml-2.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
-                  />
-                </svg> </a
-              ><br />
-              <a
-                :href="generateMap()"
-                target="_blank"
-                class="inline-flex items-center text-green-600 hover:underline"
-              >
-                {{ tripcard.station_in.chager_2.name }}
-                <svg
-                  class="w-3 h-3 ml-2.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
-                  />
-                </svg> </a
-              ><br />
-              <a
-                :href="generateMap()"
-                target="_blank"
-                class="inline-flex items-center text-green-600 hover:underline"
-              >
-                {{ tripcard.station_in.chager_3.name }}
+                {{ detail.name }}
                 <svg
                   class="w-3 h-3 ml-2.5"
                   aria-hidden="true"
@@ -95,143 +55,87 @@
                 </svg>
               </a>
             </div>
-            <!-- <p class="mb-3 font-normal text-gray-500 dark:text-gray-400">
-              
-            </p> -->
-            <div>
-              <button
-                @click="showPopup"
-                class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
-              >
-                <span
-                  class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
-                >
-                  Do you charge on there?
-                </span>
-              </button>
-              <div
-                v-if="isPopupVisible"
-                class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
-              >
-                <div class="bg-white p-6 rounded shadow-md">
-                  <!-- Card details content goes here -->
-
-                  <form @submit="submitForm" class="space-y-4">
-                    <div>
-                      <label
-                        for="cost"
-                        class="block text-sm font-medium text-gray-700"
-                        >Cost of Charge</label
-                      >
-                      <input
-                        v-model="cost"
-                        type="number"
-                        id="cost"
-                        name="cost"
-                        class="mt-1 p-2 border w-full rounded-md"
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      class="px-4 py-2 bg-blue-500 text-white rounded-md"
+            <button
+              @click="showPopup"
+              type="button"
+              class="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900"
+            >
+              Do you charge on there?
+            </button>
+            <div
+              v-if="isPopupVisible"
+              class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+            >
+              <div class="bg-white p-6 rounded shadow-md">
+                <form @submit="submitForm" class="space-y-4">
+                  <div>
+                    <label
+                      for="cost"
+                      class="block text-sm font-medium text-gray-700"
+                      >Cost of Charge</label
                     >
-                      Submit
-                    </button>
-                    <!-- <p>Total Cost: {{ totalCost }}</p> -->
-                  </form>
+                    <input
+                      v-model="cost"
+                      type="number"
+                      id="cost"
+                      name="cost"
+                      class="mt-1 p-2 border w-full rounded-md"
+                    />
+                  </div>
                   <button
-                    @click="closePopup"
-                    class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded mt-4"
+                    type="submit"
+                    class="px-4 py-2 bg-blue-500 text-white rounded-md"
                   >
-                    Close
+                    Submit
                   </button>
-                </div>
+                  <!-- <p>Total Cost: {{ totalCost }}</p> -->
+                </form>
+                <button
+                  @click="closePopup"
+                  class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded mt-4"
+                >
+                  Close
+                </button>
               </div>
             </div>
           </div>
         </div>
-      </li>
-      <li
-        v-if="
-          tripcard.distance >= currentUser.distance * 0.9 &&
-          tripcard.distance <= currentUser.distance * 1
-        "
-      >
-        <div class="flex-start flex items-center pt-3">
+        <div
+          v-if="tripcard.distance > currentUser.distance"
+          class="flex md:contents"
+        >
+          <div class="col-start-2 col-end-4 mr-10 md:mx-auto relative">
+            <div class="h-full w-6 flex items-center justify-center">
+              <div class="h-full w-1 bg-red-500 pointer-events-none"></div>
+            </div>
+            <div
+              class="flex justify-center w-7 h-7 absolute top-1/2 -mt-3 rounded-full bg-red-500 shadow text-center"
+            >
+              <i class="fas fa-times-circle text-white">{{
+                tripcard.distance
+              }}</i>
+            </div>
+          </div>
           <div
-            class="-ml-[10px] mr-3 h-[18px] w-[18px] rounded-full bg-orange-400 dark:bg-orange-500"
-          ></div>
-          <p class="text-sm text-neutral-500 dark:text-neutral-300">
-            {{ tripcard.distance }}
-          </p>
-        </div>
-        <div class="mb-6 ml-4 mt-2">
-          <div
-            class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            class="bg-green-500 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full"
           >
-            <a href="#">
-              <h5
-                class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white"
-              >
-                {{ tripcard.province }}
-              </h5>
-            </a>
-            <div>
-              <h5
-                class="m-auto mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-black"
-              >
-                Details of {{ tripcard.province }}:
-              </h5>
+            <h3 class="font-semibold text-lg mb-1">
+              {{ tripcard.province }}
+            </h3>
+            <p class="leading-tight text-justify w-full">
+              Recommend station in {{ tripcard.province }}
+            </p>
+            <div
+              v-for="detail in tripcard.station_in"
+              :key="detail.tripcard"
+              :tripcard="detail"
+            >
               <a
                 :href="generateMap()"
                 target="_blank"
-                class="inline-flex items-center text-green-600 hover:underline"
+                class="inline-flex items-center text-white hover:underline"
               >
-                {{ tripcard.station_in.chager_1.name }}
-                <svg
-                  class="w-3 h-3 ml-2.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
-                  />
-                </svg> </a
-              ><br />
-              <a
-                :href="generateMap()"
-                target="_blank"
-                class="inline-flex items-center text-green-600 hover:underline"
-              >
-                {{ tripcard.station_in.chager_2.name }}
-                <svg
-                  class="w-3 h-3 ml-2.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
-                  />
-                </svg> </a
-              ><br />
-              <a
-                :href="generateMap()"
-                target="_blank"
-                class="inline-flex items-center text-green-600 hover:underline"
-              >
-                {{ tripcard.station_in.chager_3.name }}
+                {{ detail.name }}
                 <svg
                   class="w-3 h-3 ml-2.5"
                   aria-hidden="true"
@@ -249,208 +153,54 @@
                 </svg>
               </a>
             </div>
-            <div>
-              <button
-                @click="showPopup"
-                class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
-              >
-                <span
-                  class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
-                >
-                  Do you charge on there?
-                </span>
-              </button>
-              <div
-                v-if="isPopupVisible"
-                class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
-              >
-                <div class="bg-white p-6 rounded shadow-md">
-                  <!-- Card details content goes here -->
-
-                  <form @submit="submitForm" class="space-y-4">
-                    <div>
-                      <label
-                        for="cost"
-                        class="block text-sm font-medium text-gray-700"
-                        >Cost of Charge</label
-                      >
-                      <input
-                        v-model="cost"
-                        type="number"
-                        id="cost"
-                        name="cost"
-                        class="mt-1 p-2 border w-full rounded-md"
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      class="px-4 py-2 bg-blue-500 text-white rounded-md"
+            <button
+              @click="showPopup"
+              type="button"
+              class="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:focus:ring-yellow-900"
+            >
+              Do you charge on there?
+            </button>
+            <div
+              v-if="isPopupVisible"
+              class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+            >
+              <div class="bg-white p-6 rounded shadow-md">
+                <form @submit="submitForm" class="space-y-4">
+                  <div>
+                    <label
+                      for="cost"
+                      class="block text-sm font-medium text-gray-700"
+                      >Cost of Charge</label
                     >
-                      Submit
-                    </button>
-                    <!-- <p>Total Cost: {{ totalCost }}</p> -->
-                  </form>
+                    <input
+                      v-model="cost"
+                      type="number"
+                      id="cost"
+                      name="cost"
+                      class="mt-1 p-2 border w-full rounded-md"
+                    />
+                  </div>
                   <button
-                    @click="closePopup"
-                    class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded mt-4"
+                    type="submit"
+                    class="px-4 py-2 bg-blue-500 text-white rounded-md"
                   >
-                    Close
+                    Submit
                   </button>
-                </div>
+                  <!-- <p>Total Cost: {{ totalCost }}</p> -->
+                </form>
+                <button
+                  @click="closePopup"
+                  class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded mt-4"
+                >
+                  Close
+                </button>
               </div>
             </div>
           </div>
         </div>
-      </li>
-      <li v-if="tripcard.distance > currentUser.distance">
-        <div class="flex-start flex items-center pt-3">
-          <div
-            class="-ml-[5px] mr-3 h-[9px] w-[9px] rounded-full bg-red-500 dark:bg-red-700"
-          ></div>
-          <p class="text-sm text-neutral-500 dark:text-neutral-300">
-            {{ tripcard.distance }}
-          </p>
-        </div>
-        <div class="mb-6 ml-4 mt-2">
-          <div
-            class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
-          >
-            <a href="#">
-              <h5
-                class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white"
-              >
-                {{ tripcard.province }}
-              </h5>
-            </a>
-            <div>
-              <h5
-                class="m-auto mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-black"
-              >
-                Details of {{ tripcard.province }}:
-              </h5>
-              <a
-                :href="generateMap()"
-                target="_blank"
-                class="inline-flex items-center text-green-600 hover:underline"
-              >
-                {{ tripcard.station_in.chager_1.name }}
-                <svg
-                  class="w-3 h-3 ml-2.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
-                  />
-                </svg> </a
-              ><br />
-              <a
-                :href="generateMap()"
-                target="_blank"
-                class="inline-flex items-center text-green-600 hover:underline"
-              >
-                {{ tripcard.station_in.chager_2.name }}
-                <svg
-                  class="w-3 h-3 ml-2.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
-                  />
-                </svg> </a
-              ><br />
-              <a
-                :href="generateMap()"
-                target="_blank"
-                class="inline-flex items-center text-green-600 hover:underline"
-              >
-                {{ tripcard.station_in.chager_3.name }}
-                <svg
-                  class="w-3 h-3 ml-2.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 18 18"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
-                  />
-                </svg>
-              </a>
-            </div>
-            <div>
-              <button
-                @click="showPopup"
-                class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
-              >
-                <span
-                  class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
-                >
-                  Do you charge on there?
-                </span>
-              </button>
-
-              <div
-                v-if="isPopupVisible"
-                class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
-              >
-                <div class="bg-white p-6 rounded shadow-md">
-                  <!-- Card details content goes here -->
-                  <form @submit="submitForm" class="space-y-4">
-                    <div>
-                      <label
-                        for="cost"
-                        class="block text-sm font-medium text-gray-700"
-                        >Cost of Charge</label
-                      >
-                      <input
-                        v-model="cost"
-                        type="number"
-                        id="cost"
-                        name="cost"
-                        class="mt-1 p-2 border w-full rounded-md"
-                      />
-                    </div>
-                    <button
-                      type="submit"
-                      class="px-4 py-2 bg-blue-500 text-white rounded-md"
-                    >
-                      Submit
-                    </button>
-                    <!-- <p>Total Cost: {{ totalCost }}</p> -->
-                  </form>
-
-                  <button
-                    @click="closePopup"
-                    class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded mt-4"
-                  >
-                    Close
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
-    </ol>
-  </div>
+      </div>
+    </div>
+  </body>
 </template>
 
 <script>

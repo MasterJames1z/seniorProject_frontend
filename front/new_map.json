@@ -1,0 +1,607 @@
+[
+    {
+        "province": "เชียงใหม่",
+        "distance": 0,
+        "station_in": {
+            "chager_1": {
+                "station_of": "PTT",
+                "name": "ปตท.สารภี",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "CCS 120 kW",
+                        "sta_2": "CHAdeMO 60 kW",
+                        "sta_3": " Type2 7 kW"
+                    },
+                    "type_ac": {
+                        "sta_1": "Type2 22 kW"
+                    }
+                },
+                "latitude": "18.66988193853896",
+                "longitude": "99.05230370451045"
+            },
+            "chager_2": {
+                "station_of": "EVolt",
+                "name": "146 ทางคู่ขนานถนน ซูเปอร์ไฮเวย์ ",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "DC CCS 150 kW",
+                        "sta_2": "DC Type2 22 kW"
+                    }
+                },
+                "latitude": "18.8115938",
+                "longigude": "98.9899904"
+            },
+            "chager_3": {
+                "station_of": "EVolt",
+                "name": "209 Village No.8 เชียงใหม่ ",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "DC CCS 120 kW",
+                        "sta_2": "DC CHAdeMO 60 kW"
+                    },
+                    "type_ac": {
+                        "sta_1": "Type2 22 kW"
+                    }
+                },
+                "latitude": "18.7511051",
+                "longigude": "99.0631361"
+            }
+        }
+    },
+    {
+        "province": "ลำพูน",
+        "distance": 50,
+        "station_in": {
+            "chager_1": {
+                "station_of": "PTT",
+                "name": "ปตท.ลำพูน-ดอยติ",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "CCS/SAE .. kw",
+                        "sta_2": "CHAdeMO .. kW"
+                    },
+                    "type_ac": {
+                        "sta_1": "Type2 "
+                    }
+                },
+                "latitude": "18.562919980250417",
+                "longitude": "99.03325638859324"
+            },
+            "chager_2": {
+                "station_of": "EA ANYWHERE",
+                "name": "สาขา DoHome เชียงใหม่ จ.ลำพูน",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "J-1772"
+                    },
+                    "type_ac": {
+                        "sta_1": "Type2"
+                    }
+                },
+                "latitude": "18.666213048934484",
+                "longigude": "99.049950818409"
+            },
+            "chager_3": {
+                "station_of": "MG SUPER CHARGE",
+                "name": "สถานีชาร์จรถไฟฟ้า เมืองลำพูน ลำพูน",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "DC CCS 50 kW"
+                    }
+                },
+                "latitude": "18.563464746835084",
+                "longigude": "99.03332721022102"
+            }
+        }
+    },
+    {
+        "province": "ลำปาง",
+        "distance": 100,
+        "station_in": {
+            "chager_1": {
+                "station_of": "PEA VOLTA",
+                "name": "บางจาก ห้างฉัตร",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "CCS 120 kW",
+                        "sta_2": "CHAdeMO 50 kW"
+                    },
+                    "type_ac": {
+                        "sta_1": "Type2 22 kW"
+                    }
+                },
+                "latitude": "18.310722099949402",
+                "longitude": "99.38995266226593"
+            },
+            "chager_2": {
+                "station_of": "EleX by EGAT",
+                "name": "สถานีบริการน้ำมัน PT อ.เถิน จ.ลำปาง",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "CCS/SAE 50 kW"
+                    },
+                    "type_ac": {
+                        "sta_1": "Type2 22 kW"
+                    }
+                },
+                "latitude": "17.619893510154785",
+                "longitude": "99.23312548477848"
+            },
+            "chager_3": {
+                "station_of": "EA ANYWHERE",
+                "name": "สาขา A.C.T ลำปาง จ.ลำปาง",
+                "type": {
+                    "type_ac": {
+                        "sta_1": "Type2 22 kW"
+                    }
+                },
+                "latitude": "18.278782984620257",
+                "longitude": "99.48002266197611"
+            }
+        }
+    },
+    {
+        "province": "ตาก",
+        "distance": 280,
+        "station_in": {
+            "chager_1": {
+                "station_of": "EleX by EGAT",
+                "name": "สถานีบริการน้ำมัน PT จ.ตาก",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "CCS/SAE",
+                        "sta_2": "CHAdeMO 50 kW"
+                    }
+                },
+                "latitude": "16.852963196613242",
+                "longitude": "99.11636205743517"
+            },
+            "chager_2": {
+                "station_of": "PTT",
+                "name": "PTT EV STATION สาขาตาก (ตากเคทีแอนด์ซันส์) จ.ตาก",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "CCS/SAE",
+                        "sta_2": "CHAdeMO "
+                    },
+                    "type_ac": {
+                        "sta_1": "Type2 "
+                    }
+                },
+                "latitude": "16.860980452456243 ",
+                "longitude": " 99.13519145924045 "
+            },
+            "chager_3": {
+                "station_of": " PEA VOLTA",
+                "name": "ปั๊มน้ำมันบางจาก เมืองตาก",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "CCS/SAE 50 kW",
+                        "sta_2": "CHAdeMO 50 kW "
+                    },
+                    "type_ac": {
+                        "sta_1": "Type2 22 kW "
+                    }
+                },
+                "latitude": "16.878803989198097",
+                "longitude": "99.12915811925244 "
+            }
+        }
+    },
+    {
+        "province": "พิษณุโลก",
+        "distance": 410,
+        "station_in": {
+            "chager_1": {
+                "station_of": "PTT",
+                "name": "PTT EV STATION สาขา ม.พิษณุโลก จ.พิษณุโลก",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "CCS 120 KW",
+                        "sta_2": "CHAdeMO 60 kW"
+                    },
+                    "type_ac": {
+                        "sta_1": "Type2 20 kW "
+                    },
+                    "latitude": "16.794530390034627",
+                    "longitude": "100.20970794514152 "
+                }
+            },
+            "chager_2": {
+                "station_of": "PEA VOLTA",
+                "name": "ปั๊มน้ำมันบางจาก เมืองพิษณุโลก (ทล.11 กม.228)",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "CCS/SAE 50 KW",
+                        "sta_2": "CHAdeMO 60 KW"
+                    },
+                    "type_ac": {
+                        "sta_1": "Type2 43 kW"
+                    }
+                },
+                "latitude": "16.842390375391336",
+                "longitude": "100.23106280807858 "
+            },
+            "chager_3": {
+                "station_of": " EA ANYWHERE ",
+                "name": "EA ANYWHERE สาขาพิษณุโลก ยูไนเต็ด จ. พิษณุโลก ",
+                "type": {
+                    "type_ac": {
+                        "sta_1": "Type2 43 kW "
+                    }
+                },
+                "latitude": "16.800155091301182",
+                "longitude": "100.2233578401963"
+            }
+        }
+    },
+    {
+        "province": "กำแพงเพชร",
+        "distance": 410,
+        "station_in": {
+            "chager_1": {
+                "station_of": "EA ANYWHERE",
+                "name": "EA ANYWHERE สาขาโรบินสัน กำแพงเพชร จ. กำแพงเพชร",
+                "type": {
+                    "type_dc": {
+                        "sta_1": " 2 เครื่อง "
+                    },
+                    "type_ac": {
+                        "sta_1": " 1 เครื่อง "
+                    }
+                },
+                "latitude": "16.476877227068616",
+                "longitude": "99.54972328755018"
+            },
+            "chager_2": {
+                "station_of": "PEA VOLTA",
+                "name": "PEA VOLTA ปั๊มน้ำมันบางจาก คลองขลุง กำแพงเพชร",
+                "type": {
+                    "type_dc": {
+                        "sta_1": " CCS/SAE 50 KW ",
+                        "sta_2": " CHAdeMO 50 KW "
+                    },
+                    "type_ac": {
+                        "sta_1": " Type 2 50 kW "
+                    }
+                },
+                "latitude": "16.21017330095817",
+                "longitude": "99.70335348622586"
+            },
+            "chager_3": {
+                "station_of": "PTT",
+                "name": "PTT EV STATION สาขาธรรมรัตน์ ปิโตรเลียม จ.กำแพงเพชร",
+                "type": {
+                    "type_dc": {
+                        "sta_1": " CCS/SAE 120 KW ",
+                        "sta_2": " CHAdeMO 120 KW "
+                    },
+                    "type_ac": {
+                        "sta_1": " Type 2 22 kW "
+                    }
+                },
+                "latitude": "16.469999912806443",
+                "longitude": "99.49520623516644"
+            }
+        }
+    },
+    {
+        "province": "นครสวรรค์",
+        "distance": 460,
+        "station_in": {
+            "chager_1": {
+                "station_of": "PEA VOLTA",
+                "name": "PEA VOLTA ปั๊มน้ำมันบางจาก พยุหะคีรี นครสวรรค์",
+                "type": {
+                    "type_dc": {
+                        "sta_1": " CCS/SAE 50KW ",
+                        "sta_2": " CHAdeMO 50KW เครื่อง "
+                    }
+                },
+                "latitude": "15.498697433488111",
+                "longitude": " 100.1283878228001"
+            },
+            "chager_2": {
+                "station_of": "EleX by EGAT",
+                "name": "สถานีบริการน้ำมัน PT สาขาพยุหะคีรี 2 จ.นครสวรรค์",
+                "type": {
+                    "type_dc": {
+                        "sta_1": " CCS 120 KW "
+                    },
+                    "type_ac": {
+                        "sta_1": " Type 2 22 kW "
+                    }
+                },
+                "latitude": "15.397877977371097",
+                "longitude": "100.14773821648816 "
+            },
+            "chager_3": {
+                "station_of": "EA ANYWHERE",
+                "name": "EA ANYWHERE สาขา T-Space Coworking & Cafe จ. นครสวรรค์",
+                "type": {
+                    "type_dc": {
+                        "sta_1": " 2 เครื่อง "
+                    },
+                    "type_ac": {
+                        "sta_1": " 4 เครื่อง "
+                    }
+                },
+                "latitude": "15.716525584993835",
+                "longitude": "100.11806366297468 "
+            }
+        }
+    },
+    {
+        "province": "ชัยนาท",
+        "distance": 520,
+        "station_in": {
+            "chager_1": {
+                "station_of": "EA ANYWHERE",
+                "name": "EA ANYWHERE สาขาชัยนาท รีสอร์ท จ. ชัยนาท",
+                "type": {
+                    "type_dc": {
+                        "sta_1": " CCS/SAE 150KW "
+                    },
+                    "type_ac": {
+                        "sta_1": " Type 2 22KW"
+                    }
+                },
+                "latitude": "15.190760366036317",
+                "longitude": "100.13165377569756 "
+            },
+            "chager_2": {
+                "station_of": "EA ANYWHERE",
+                "name": "EA ANYWHERE สาขาณัฐชนนฟาร์ม รีสอร์ท จ. ชัยนาท",
+                "type": {
+                    "type_dc": {
+                        "sta_1": " CCS/SAE 150KW "
+                    },
+                    "type_ac": {
+                        "sta_1": " Type 2 22KW"
+                    }
+                },
+                "latitude": "15.217572570566597",
+                "longitude": "100.11591475678404  "
+            },
+            "chager_3": {
+                "station_of": "EA ANYWHERE",
+                "name": "EA ANYWHERE สาขาแฟนตาซี รีสอร์ท จ. ชัยนาท",
+                "type": {
+                    "type_dc": {
+                        "sta_1": " CCS "
+                    },
+                    "type_ac": {
+                        "sta_1": " Type 2 "
+                    }
+                },
+                "latitude": "15.218258739771244",
+                "longitude": "100.16901737665093 "
+            }
+        }
+    },
+    {
+        "province": "สิงห์บุรี",
+        "distance": 555,
+        "station_in": {
+            "chager_1": {
+                "station_of": "EA ANYWHERE",
+                "name": "EA ANYWHERE สาขาเกษรา เบเกอรี่ จ. สิงห์บุรี",
+                "type": {
+                    "type_dc": {
+                        "sta_1": " CCS/SAE 150KW "
+                    }
+                },
+                "latitude": "14.891611533439297",
+                "longitude": "100.3998276326898 "
+            },
+            "chager_2": {
+                "station_of": "EA ANYWHERE",
+                "name": "EA ANYWHERE สาขาไชยแสง ปิโตรเลียม จ. สิงห์บุรี",
+                "type": {
+                    "type_dc": {
+                        "sta_1": " CCS/SAE 150KW ",
+                        "sta_2": " J-1772 22KW "
+                    },
+                    "type_ac": {
+                        "sta_1": " Type 2 22KW"
+                    }
+                },
+                "latitude": "15.033369253092795",
+                "longitude": "100.33530453810076 "
+            },
+            "chager_3": {
+                "station_of": "PEA VOLTA",
+                "name": "PEA VOLTA ปั๊มน้ำมันบางจาก อินทร์บุรี (ขาออก) สิงห์บุรี ",
+                "type": {
+                    "type_dc": {
+                        "sta_1": " CCS/SAE 50KW ",
+                        "sta_2": " CHAdeMO 50KW "
+                    },
+                    "type_ac": {
+                        "sta_1": " Type 2 22KW  "
+                    }
+                },
+                "latitude": "14.981296440580728",
+                "longitude": "100.3570218667564 "
+            }
+        }
+    },
+    {
+        "province": "อ่างทอง",
+        "distance": 590,
+        "station_in": {
+            "chager_1": {
+                "station_of": "EleX by EGAT",
+                "name": "EleX by EGAT หลักฟ้า ไชโย อ่างทอง",
+                "type": {
+                    "type_dc": {
+                        "sta_1": " CCS 125 KW "
+                    }
+                },
+                "latitude": "14.68115019249872",
+                "longitude": "100.46554293853474  "
+            },
+            "chager_2": {
+                "station_of": "PEA ",
+                "name": "PEA จระเข้ร้อง ไชโย อ่างทอง",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "CCS 60KW",
+                        "sta_2": "CHAdeMO 80KW"
+                    },
+                    "type_ac": {
+                        "sta_1": " Type 2 3.7KW "
+                    }
+                },
+                "latitude": "14.6655316794895",
+                "longigude": "100.47269800721567"
+            },
+            "chager_3": {
+                "station_of": " PTT",
+                "name": "PTT จรเข้ร้อง ไชโย อ่างทอง",
+                "type_dc": {
+                    "sta_1": " CCS 120KW "
+                },
+                "type_ac": {
+                    "sta_1": " Type 2 22KW"
+                },
+                "latitude": "14.663651209497054",
+                "longitude": "100.47132167416468"
+            }
+        }
+    },
+    {
+        "province": "อยุธยา",
+        "distance": 630,
+        "station_in": {
+            "chager_1": {
+                "station_of": " PEA VOLTA ",
+                "name": " PEA VOLTA ปั๊มน้ำมันบางจาก บางปะอิน (สายเอเชีย กม.62 ขาออก) ",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "CCS ",
+                        "sta_2": "CHAdeMO "
+                    },
+                    "type_ac": {
+                        "sta_1": "Type2 20"
+                    }
+                },
+                "latitude": "14.281611604010301",
+                "longitude": "100.58257349448607  "
+            },
+            "chager_2": {
+                "station_of": "EleX by EGAT",
+                "name": " EleX by EGAT สถานีบริการน้ำมัน PT อ.วังน้อย จ.พระนครศรีอยุธยา  ",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "CCS/SAE 2 Plugs 118 - 120 kW "
+                    },
+                    "type_ac": {
+                        "sta_1": "Type2 "
+                    }
+                },
+                "latitude": "14.260610060468657",
+                "longitude": "100.775009641343"
+            },
+            "chager_3": {
+                "station_of": "EA ANYWHERE ",
+                "name": " EA ANYWHERE สาขา Porto Go บางปะอิน จ. พระนครศรีอยุธยา ",
+                "type": {
+                    "type_ac": {
+                        "sta_1": "Type2 "
+                    }
+                },
+                "latitude": "14.201546376514328",
+                "longitude": " 100.60783302341042  "
+            }
+        }
+    },
+    {
+        "province": "ปทุมธานี",
+        "distance": 670,
+        "station_in": {
+            "chager_1": {
+                "station_of": " PEA VOLTA ",
+                "name": "PEA VOLTA รังสิต ",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "CCS/SAE ",
+                        "sta_2": "CHAdeMO "
+                    }
+                },
+                "latitude": "14.045556821147185",
+                "longitude": "100.61591741642165 "
+            },
+            "chager_2": {
+                "station_of": "EV Station",
+                "name": " EV Station สถานีชาร์จรถไฟฟ้า ธัญบุรี ปทุมธานี ",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "CCS/SAE 120 kW ",
+                        "sta_2": "CHAdeMO  60 KW"
+                    },
+                    "type_ac": {
+                        "sta_1": "Type2 22 KW"
+                    }
+                },
+                "latitude": "14.015600239466103",
+                "longitude": "00.72253332587671 "
+            },
+            "chager_3": {
+                "station_of": "EVolt",
+                "name": " EVolt สถานีชาร์จรถไฟฟ้า คลองหลวง ปทุมธานี  ",
+                "type": {
+                    "type_ac": {
+                        "sta_1": "Type2 7KW"
+                    }
+                },
+                "latitude": "14.071112490107167",
+                "longitude": "100.61096541537947"
+            }
+        }
+    },
+    {
+        "province": "กรุงเทพ",
+        "distance": 701,
+        "station_in": {
+            "chager_1": {
+                "station_of": "PTT Station",
+                "name": "PTT Station สาขา ซ. นภาลัย",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "CCS 120 KW",
+                        "sta_2": "CHAdeMO 60 kW"
+                    }
+                },
+                "latitude": "13.6754925",
+                "longitude": "100.5948308"
+            },
+            "chager_2": {
+                "station_of": "EVolt",
+                "name": "Volt สถานีชาร์จรถไฟฟ้า บางพลัด กรุงเทพมหานคร | 544 ถนน บรมราชชนนี",
+                "type": {
+                    "type_ac": {
+                        "sta_1": "Type2 7 KW"
+                    }
+                },
+                "latitude": "13.686199881929992",
+                "longitude": "100.60156734442296"
+            },
+            "chager_3": {
+                "station_of": "Elex by EGAT",
+                "name": "Elex by EGAT สถานีชาร์จรถไฟฟ้า จตุจักร กรุงเทพมหานคร | 140/21 นิคมรถไฟ ",
+                "type": {
+                    "type_dc": {
+                        "sta_1": "CCS/SAE 50 kW ",
+                        "sta_2": "CHAdeMO  50 KW"
+                    },
+                    "type_ac": {
+                        "sta_1": "Type2 22 KW"
+                    }
+                },
+                "latitude": "13.820195017571086",
+                "longitude": "100.55618552371328"
+            }
+        }
+    }
+]
