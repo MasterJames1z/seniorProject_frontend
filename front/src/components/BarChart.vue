@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white mx-auto p-1 px-4 chart-container rounded-lg shadow-lg">
-    <h1 class="bold text-xl">Summarize of plan</h1>
+    <h1 class="text-3xl font-bold mb-4">Summarize of plan</h1>
     <canvas ref="myChart"></canvas>
     <div v-if="!showChart" class="bg-white rounded-lg shadow-lg p-6">
       <p class="text-white bg-red-600">Summary of trips</p>
@@ -10,7 +10,7 @@
         Summary is EV using cost less than Fuel cars is {{ summaryCost }} THB
       </p>
     </div>
-    <div v-if="!showChart" class="rounded-lg shadow-lg p-6">
+    <!-- <div v-if="!showChart" class="rounded-lg shadow-lg p-6">
       <p class="bg-red-500">**note**</p>
       <p>Car used for comparison: civic 1.5 el, fuel tank size 40 liters</p>
       <p>It has a fuel consumption rate of 15 kilometers/liter.</p>
@@ -20,7 +20,7 @@
         Therefore, a total of 47 liters of oil will be used. The total price is
         1750.28 baht.
       </p>
-    </div>
+    </div> -->
   </div>
 </template>
 

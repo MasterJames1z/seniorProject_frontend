@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-green-500 min-h-screen">
+  <div class="bg-green-800 min-h-screen">
     <!-- Hero section -->
     <div id="headed" class="bg-cover bg-center">
       <header class="bg-black bg-opacity-60">
@@ -72,7 +72,7 @@
         <!-- Second column -->
         <div>
           <h3 class="text-2xl text-white font-bold mb-2">About EV Better</h3>
-          <p class="text-lg">
+          <p class="text-lg text-white">
             Discover the power of our app for effortless EV charging. Find
             nearby charging stations with ease, plan your trips hassle-free, and
             compare costs between EV and fuel cars. Simplify your EV experience

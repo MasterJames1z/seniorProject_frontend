@@ -189,53 +189,6 @@
         }
     },
     {
-        "province": "Phitsanulok",
-        "distance": 410,
-        "station_in": {
-            "chager_1": {
-                "station_of": "PTT",
-                "name": "PTT EV STATION สาขา ม.พิษณุโลก จ.พิษณุโลก",
-                "type": {
-                    "type_dc": {
-                        "sta_1": "CCS 120 KW",
-                        "sta_2": "CHAdeMO 60 kW"
-                    },
-                    "type_ac": {
-                        "sta_1": "Type2 20 kW "
-                    },
-                    "latitude": "16.794530390034627",
-                    "longitude": "100.20970794514152 "
-                }
-            },
-            "chager_2": {
-                "station_of": "PEA VOLTA",
-                "name": "ปั๊มน้ำมันบางจาก เมืองพิษณุโลก (ทล.11 กม.228)",
-                "type": {
-                    "type_dc": {
-                        "sta_1": "CCS/SAE 50 KW",
-                        "sta_2": "CHAdeMO 60 KW"
-                    },
-                    "type_ac": {
-                        "sta_1": "Type2 43 kW"
-                    }
-                },
-                "latitude": "16.842390375391336",
-                "longitude": "100.23106280807858 "
-            },
-            "chager_3": {
-                "station_of": " EA ANYWHERE ",
-                "name": "EA ANYWHERE สาขาพิษณุโลก ยูไนเต็ด จ. พิษณุโลก ",
-                "type": {
-                    "type_ac": {
-                        "sta_1": "Type2 43 kW "
-                    }
-                },
-                "latitude": "16.800155091301182",
-                "longitude": "100.2233578401963"
-            }
-        }
-    },
-    {
         "province": "Kamphaeng Phet",
         "distance": 410,
         "station_in": {

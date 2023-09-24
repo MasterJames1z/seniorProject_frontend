@@ -69,7 +69,7 @@
         <div
           class="bg-white flex flex-col items-center mt-8 rounded-lg shadow-lg p-6"
         >
-          Normal search
+          <h1 class="text-xl font-bold mb-4">Normal search</h1>
           <!-- By Search province -->
           <!-- <label class="text-gray-700 mb-2">Starting point:</label>
         <input v-model="origin" type="text" class="w-64 px-4 py-2 border border-gray-300 rounded-md" />
@@ -160,14 +160,18 @@
         <div
           class="bg-white flex flex-col items-center mt-8 rounded-lg shadow-lg p-6"
         >
-          <h1>Result for plan</h1>
+          <h1 class="text-xl font-bold mb-4">Result for plan</h1>
           <div class="flex items-center justify-center bg-white">
             <div class="grid grid-cols-1">
-              <p>Starting point: {{ origin }}</p>
-              <p>Destination: {{ destination }}</p>
+              <h1 class="text-xl text-bold">Starting point: {{ origin }}</h1>
+              <h1 class="text-xl text-bold">Destination: {{ destination }}</h1>
               <div v-if="distance" class="mt-4">
-                <p class="text-gray-700">Distance: {{ distance }}</p>
-                <p class="text-gray-700">Duration: {{ duration }}</p>
+                <p class="text-gray-700 text-xl text-bold">
+                  Distance: {{ distance }}
+                </p>
+                <p class="text-gray-700 text-xl text-bold">
+                  Duration: {{ duration }}
+                </p>
               </div>
               <div v-if="showTemplates && errorMessage" class="mt-4">
                 <p class="text-red-500">{{ errorMessage }}</p>
