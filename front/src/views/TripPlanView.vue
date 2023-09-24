@@ -67,7 +67,7 @@
     >
       <div class="w-full">
         <div
-          class="bg-white flex flex-col items-center mt-8 rounded-lg shadow-lg p-6"
+          class="h-3/4 bg-white flex flex-col items-center mt-8 rounded-lg shadow-lg p-6"
         >
           <h1 class="text-xl font-bold mb-4">Normal search</h1>
           <!-- By Search province -->
@@ -86,6 +86,7 @@
           >
             <!-- <option value="" disabled>Select starting point</option> -->
             <option value="Chiang Mai">Chiang Mai</option>
+            <option value="Khon Khan">Khon Khan</option>
           </select>
           <label class="text-gray-700 mb-2 mt-5">Destination:</label>
           <select
@@ -158,7 +159,7 @@
       </div>
       <div class="w-full">
         <div
-          class="bg-white flex flex-col items-center mt-8 rounded-lg shadow-lg p-6"
+          class="h-3/4 bg-white flex flex-col items-center mt-8 rounded-lg shadow-lg p-6"
         >
           <h1 class="text-xl font-bold mb-4">Result for plan</h1>
           <div class="flex items-center justify-center bg-white">
