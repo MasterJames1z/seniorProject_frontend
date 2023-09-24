@@ -1,5 +1,5 @@
 <template>
-  <body class="bg-green-800">
+  <body class="bg-gradient-to-b from-green-500 to-green-800">
     <div
       v-if="showLogin"
       class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
@@ -180,7 +180,7 @@
                 <div v-if="showButtonRoad">
                   <button
                     @click="roadmapButtonPressed"
-                    class="mt-4 bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"
+                    class="mt-4 bg-amber-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"
                   >
                     Go to road map
                   </button>

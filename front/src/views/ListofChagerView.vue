@@ -1,5 +1,7 @@
 <template>
-  <h1>List of charger station in Chiang Mai</h1>
+  <h1 class="bg-green-800 text-white text-xl">
+    List of charger station in Chiang Mai
+  </h1>
   <chargerView
     v-for="detail in myJson"
     :key="detail.id"

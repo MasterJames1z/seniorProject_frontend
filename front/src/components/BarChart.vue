@@ -1,26 +1,91 @@
 <template>
   <div class="bg-white mx-auto p-1 px-4 chart-container rounded-lg shadow-lg">
     <h1 class="text-3xl font-bold mb-4">Summarize of plan</h1>
-    <canvas ref="myChart"></canvas>
-    <div v-if="!showChart" class="bg-white rounded-lg shadow-lg p-6">
-      <p class="text-white bg-red-600">Summary of trips</p>
-      <p>Electric Vehecle using cost = {{ totalCost }} THB</p>
-      <p>Fuel car = 1750.28 THB</p>
-      <p>
-        Summary is EV using cost less than Fuel cars is {{ summaryCost }} THB
-      </p>
-    </div>
-    <!-- <div v-if="!showChart" class="rounded-lg shadow-lg p-6">
-      <p class="bg-red-500">**note**</p>
-      <p>Car used for comparison: civic 1.5 el, fuel tank size 40 liters</p>
-      <p>It has a fuel consumption rate of 15 kilometers/liter.</p>
-      <p>Distance traveled: 701 kilometers.</p>
-      <P>Using E20S oil, the price of oil is 37.24 baht/liter.</P>
-      <p>
-        Therefore, a total of 47 liters of oil will be used. The total price is
-        1750.28 baht.
-      </p>
-    </div> -->
+    <details class="question py-4 border-b border-grey-lighter">
+      <summary class="flex items-center">
+        Chart
+        <button class="ml-auto">
+          <svg
+            class="fill-current opacity-75 w-4 h-4 -mr-1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"
+            />
+          </svg>
+        </button>
+      </summary>
+
+      <div class="mt-4 leading-normal text-sm">
+        <canvas ref="myChart"></canvas>
+      </div>
+    </details>
+    <details class="question py-4 border-b border-grey-lighter">
+      <summary class="flex items-center">
+        Summarize
+        <button class="ml-auto">
+          <svg
+            class="fill-current opacity-75 w-4 h-4 -mr-1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"
+            />
+          </svg>
+        </button>
+      </summary>
+
+      <div class="mt-4 leading-normal text-sm">
+        <div v-if="!showChart" class="bg-white rounded-lg shadow-lg p-6">
+          <p class="text-white bg-red-600">Summary of trips</p>
+          <p>Electric Vehecle using cost = {{ totalCost }} THB</p>
+          <p>Fuel car = 1750.28 THB</p>
+          <p>
+            Summary is EV using cost less than Fuel cars is
+            {{ summaryCost }} THB
+          </p>
+        </div>
+      </div>
+    </details>
+    <details class="question py-4 border-b border-grey-lighter">
+      <summary class="flex items-center">
+        Compare with car
+        <button class="ml-auto">
+          <svg
+            class="fill-current opacity-75 w-4 h-4 -mr-1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"
+            />
+          </svg>
+        </button>
+      </summary>
+
+      <div class="mt-4 leading-normal text-sm">
+        <div v-if="!showChart" class="rounded-lg shadow-lg p-6">
+          <p class="bg-red-500">**Note**</p>
+          <p>Car used for comparison: civic 1.5 el, fuel tank size 40 liters</p>
+          <p>It has a fuel consumption rate of 15 kilometers/liter.</p>
+          <p>Distance traveled: 701 kilometers.</p>
+          <P>Using E20S oil, the price of oil is 37.24 baht/liter.</P>
+          <p>
+            Therefore, a total of 47 liters of oil will be used. The total price
+            is 1750.28 baht.
+          </p>
+        </div>
+      </div>
+    </details>
+    <button
+      id="showAllDetailsButton"
+      class="bg-amber-500 text-white px-4 py-2 rounded mt-4"
+      @click="showAllDetails"
+    >
+      Show all summary details
+    </button>
   </div>
 </template>
 
@@ -44,7 +109,7 @@ export default {
   methods: {
     async waitAndExecute() {
       // Wait for 3 seconds
-      await new Promise((resolve) => setTimeout(resolve, 3000));
+      await new Promise((resolve) => setTimeout(resolve, 2000));
 
       // Update data after the delay
       console.log(this.totalCost);
@@ -84,6 +149,14 @@ export default {
       this.renderChart();
       this.showChart = false;
       this.summaryCost = 1750.28 - this.totalCost;
+    },
+    showAllDetails() {
+      const detailsElements = document.querySelectorAll("details");
+      const showDetails = !detailsElements[0].open;
+
+      detailsElements.forEach((details) => {
+        details.open = showDetails;
+      });
     },
   },
   data() {

@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="bg-green-600">
     <div class="flex justify-center items-center mb-4 p-2">
-      <label for="newMarkerInput" class="mr-2">New Charger:</label>
+      <label for="newMarkerInput" class="mr-2 text-white">New Charger:</label>
       <input
         v-model="newMarker"
         type="text"
@@ -10,7 +10,7 @@
       />
       <button
         @click="addMarker"
-        class="ml-2 bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded"
+        class="ml-2 bg-amber-500 hover:bg-amber-800 text-white font-bold py-2 px-4 rounded"
       >
         Add Charger
       </button>

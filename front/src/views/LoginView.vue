@@ -1,11 +1,13 @@
 <template>
-  <!-- component -->
-  <div class="mx-auto p-1 px-4 bg-white-300 dark:bg-white-800 h-screen">
+  <!-- <body class="bg-green-800"> -->
+  <div
+    class="mx-auto p-1 px-4 bg-gradient-to-b from-green-500 to-green-800 dark:bg-white-800 h-screen"
+  >
     <div
       class="flex flex-col items-center flex-1 h-full justify-center px-4 sm:px-0"
     >
       <div
-        class="flex rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2 dark:bg-gray-900 dark:border-gray-700 sm:mx-0"
+        class="bg-white flex rounded-lg shadow-lg w-full sm:w-3/4 lg:w-1/2 dark:bg-gray-900 dark:border-gray-700 sm:mx-0"
         style="height: 500px"
       >
         <div class="flex flex-col w-full md:w-1/2 p-4">
@@ -45,7 +47,7 @@
                 <div class="flex flex-col mt-8">
                   <button
                     type="submit"
-                    class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-semibold py-2 px-4 rounded"
+                    class="bg-green-500 hover:bg-green-700 text-white text-sm font-semibold py-2 px-4 rounded"
                   >
                     Login
                   </button>
@@ -77,6 +79,7 @@
       </div>
     </div>
   </div>
+  <!-- </body> -->
 </template>
 <script>
 import { Form, Field, ErrorMessage } from "vee-validate";

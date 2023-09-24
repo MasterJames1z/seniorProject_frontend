@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto p-1 px-4 bg-white dark:bg-white">
+  <div class="mx-auto p-1 px-4 bg-green-800 dark:bg-white">
     <div
       class="h-full p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
     >
@@ -14,7 +14,10 @@
         {{ charger.Station_At }}
       </p>
       <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-        lat: {{ charger.lat }} || lan: {{ charger.lon }}
+        latitude: {{ charger.lat }}
+      </p>
+      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        longitude: {{ charger.lon }}
       </p>
     </div>
   </div>

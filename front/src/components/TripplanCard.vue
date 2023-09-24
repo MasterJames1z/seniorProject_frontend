@@ -1,5 +1,5 @@
 <template>
-  <body class="bg-green-900">
+  <body class="bg-green-800">
     <div class="container">
       <div class="flex flex-col md:grid grid-cols-12 text-gray-50">
         <div
@@ -120,7 +120,7 @@
             </div>
           </div>
           <div
-            class="bg-orange-600 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full"
+            class="bg-orange-500 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full"
           >
             <h3 class="font-semibold text-lg mb-1">
               {{ tripcard.province }}
@@ -218,7 +218,7 @@
             </div>
           </div>
           <div
-            class="bg-red-900 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full"
+            class="bg-red-700 col-start-4 col-end-12 p-4 rounded-xl my-4 mr-auto shadow-md w-full"
           >
             <h3 class="font-semibold text-lg mb-1">
               {{ tripcard.province }}

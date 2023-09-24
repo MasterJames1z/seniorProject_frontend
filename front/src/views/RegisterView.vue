@@ -1,11 +1,13 @@
 <template>
-  <section class="bg-gray-50 dark:bg-gray-900">
+  <section
+    class="bg-gradient-to-b from-green-500 to-green-800 dark:bg-gray-900"
+  >
     <div
       class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0"
     >
       <a
         href="/"
-        class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
+        class="flex items-center mb-6 text-2xl font-semibold text-white dark:text-white"
       >
         EV Better
       </a>
@@ -132,7 +134,7 @@
             <div v-if="message" class="text-red-500">{{ message }}</div>
             <button
               type="submit"
-              class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-semibold py-2 px-4 rounded"
+              class="bg-amber-500 hover:bg-amber-700 text-white text-sm font-semibold py-2 px-4 rounded"
             >
               Register
             </button>

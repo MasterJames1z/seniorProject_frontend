@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-green-800 min-h-screen">
+  <div class="bg-gradient-to-b from-green-500 to-green-800 min-h-screen">
     <!-- Hero section -->
     <div id="headed" class="bg-cover bg-center">
       <header class="bg-black bg-opacity-60">
