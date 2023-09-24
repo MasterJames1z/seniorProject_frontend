@@ -1,6 +1,8 @@
 <template>
   <!-- component -->
-  <div class="flex items-center h-screen w-full justify-center">
+  <div
+    class="flex items-center bg-gradient-to-b from-green-500 to-green-800 h-screen w-full justify-center"
+  >
     <div class="max-w-xs">
       <div class="bg-white shadow-xl rounded-lg py-3">
         <div class="photo-wrapper p-2">
@@ -36,7 +38,7 @@
 
           <div class="text-center my-3">
             <a
-              class="text-xs text-indigo-500 italic hover:underline hover:text-indigo-600 font-medium"
+              class="text-xm text-orange-500 italic hover:underline hover:text-orange-700 font-medium"
               href="/history"
               >History</a
             >
