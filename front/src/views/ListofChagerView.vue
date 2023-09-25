@@ -1,5 +1,5 @@
 <template>
-  <h1 class="bg-green-800 text-white text-xl">
+  <h1 class="bg-green-500 text-white text-2xl text-bold pt-3 pb-3">
     List of charger station in Chiang Mai
   </h1>
   <chargerView

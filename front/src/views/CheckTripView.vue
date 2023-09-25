@@ -1,5 +1,5 @@
 <template>
-  <body class="bg-green-800">
+  <body class="bg-cyan-100 bg-opacity-50">
     <div v-if="currentUser">
       <!-- <h1 class="text-4xl text-center font-semibold mb-6 p-4 mt-4">Road map</h1> -->
       <tripView

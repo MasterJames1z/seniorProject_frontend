@@ -1,5 +1,10 @@
 <template>
-  <body class="bg-green-800">
+  <body
+    style="
+      background-image: url('https://static.vecteezy.com/system/resources/previews/008/017/890/original/or-illustrator-of-yellow-electric-vehicle-with-an-electric-charging-cabinet-with-nature-green-grass-and-shadow-of-town-under-blue-sky-and-white-clouds-vector.jpg');
+    "
+    class="bg-cover"
+  >
     <div class="container">
       <div class="flex flex-col md:grid grid-cols-12 text-gray-50">
         <div
@@ -85,7 +90,7 @@
                   <h1 class="text-black">Total cost: {{ GStore.totalCost }}</h1>
                   <button
                     type="submit"
-                    class="px-4 py-2 bg-blue-500 text-white rounded-md"
+                    class="mx-2 px-4 py-2 bg-green-500 text-white rounded-md"
                   >
                     Submit
                   </button>
@@ -186,7 +191,7 @@
                   <h1 class="text-black">Total cost: {{ GStore.totalCost }}</h1>
                   <button
                     type="submit"
-                    class="px-4 py-2 bg-blue-500 text-white rounded-md"
+                    class="mx-2 px-4 py-2 bg-green-500 text-white rounded-md"
                   >
                     Submit
                   </button>
@@ -284,7 +289,7 @@
                   <h1 class="text-black">Total cost: {{ GStore.totalCost }}</h1>
                   <button
                     type="submit"
-                    class="px-4 py-2 bg-blue-500 text-white rounded-md"
+                    class="mx-2 px-4 py-2 bg-green-500 text-white rounded-md"
                   >
                     Submit
                   </button>

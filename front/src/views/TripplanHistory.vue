@@ -1,5 +1,5 @@
 <template>
-  <body class="bg-gradient-to-b from-green-500 to-green-800 h-screen">
+  <body class="bg-gradient-to-b from-green-500 to-green-800 h-auto">
     <h5
       class="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white"
     >

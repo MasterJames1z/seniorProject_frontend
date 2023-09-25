@@ -82,7 +82,7 @@
     </details>
     <button
       id="showAllDetailsButton"
-      class="bg-amber-500 hover:bg-amber-700 text-white px-4 py-2 rounded mt-4"
+      class="bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded mt-4"
       @click="showAllDetails"
     >
       Show all summary details

@@ -1,5 +1,10 @@
 <template>
-  <body class="bg-gradient-to-b from-green-500 to-green-800">
+  <body
+    style="
+      background-image: url('https://static.vecteezy.com/system/resources/previews/008/017/890/original/or-illustrator-of-yellow-electric-vehicle-with-an-electric-charging-cabinet-with-nature-green-grass-and-shadow-of-town-under-blue-sky-and-white-clouds-vector.jpg');
+    "
+    class="bg-cover"
+  >
     <div
       v-if="showLogin"
       class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
@@ -67,14 +72,9 @@
     >
       <div class="w-full">
         <div
-          class="h-3/4 bg-white flex flex-col items-center mt-8 rounded-lg shadow-lg p-6"
+          class="bg-green-500 bg-opacity-50 flex flex-col items-center mt-8 rounded-lg shadow-lg p-6"
         >
-          <h1 class="text-xl font-bold mb-4">Normal search</h1>
-          <!-- By Search province -->
-          <!-- <label class="text-gray-700 mb-2">Starting point:</label>
-        <input v-model="origin" type="text" class="w-64 px-4 py-2 border border-gray-300 rounded-md" />
-        <label class="text-gray-700 mt-4 mb-2">Destination:</label>
-        <input v-model="destination" type="text" class="w-64 px-4 py-2 border border-gray-300 rounded-md" /> -->
+          <h1 class="text-gray-700 text-xl font-bold mb-4">Normal search</h1>
           <div class="flex mt-3">
             <input type="checkbox" class="mr-2" v-model="showTemplates" />
             <label class="text-gray-700">Filter</label>
@@ -84,7 +84,6 @@
             v-model="origin"
             class="w-64 px-4 py-2 border border-gray-300 rounded-md"
           >
-            <!-- <option value="" disabled>Select starting point</option> -->
             <option value="Chiang Mai">Chiang Mai</option>
             <option value="Khon Khan">Khon Khan</option>
           </select>
@@ -93,7 +92,6 @@
             v-model="destination"
             class="w-64 px-4 py-2 border border-gray-300 rounded-md"
           >
-            <!-- <option value="" disabled>Select destination</option> -->
             <option value="Bangkok">Bangkok</option>
           </select>
 
@@ -107,16 +105,6 @@
           >
             Plan now
           </button>
-          <!-- <button
-          v-if="!showTemplates"
-          @click="calculateButtonPressednonSearch"
-          class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        >
-          Plan now
-        </button> -->
-          <!-- </div>
-        <div class="mx-auto p-1 px-4"></div>
-        <div class="bg-white rounded-lg shadow-lg p-6 mx-auto p-1 px-4"> -->
           <div v-if="showTemplates" class="flex mt-9">
             Type:
             <div class="mt-8">
@@ -159,14 +147,28 @@
       </div>
       <div class="w-full">
         <div
-          class="h-3/4 bg-white flex flex-col items-center mt-8 rounded-lg shadow-lg p-6"
+          class="bg-green-500 bg-opacity-50 flex flex-col items-center mt-8 rounded-lg shadow-lg p-6"
         >
-          <h1 class="text-xl font-bold mb-4">Result for plan</h1>
-          <div class="flex items-center justify-center bg-white">
+          <h1 class="text-xl font-bold mb-4">Result for search</h1>
+          <div class="flex items-center justify-center">
             <div class="grid grid-cols-1">
               <h1 class="text-xl text-bold">Starting point: {{ origin }}</h1>
               <h1 class="text-xl text-bold">Destination: {{ destination }}</h1>
-              <div v-if="distance" class="mt-4">
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-green-500 bg-opacity-50 flex flex-col items-center mt-3 rounded-lg shadow-lg p-6"
+        >
+          <h1 class="text-xl font-bold mb-2">Result for calculate</h1>
+          <div class="flex items-center justify-center">
+            <div class="grid grid-cols-1">
+              <div v-if="distance == 0" class="mt-4">
+                <p class="text-gray-700 text-xl text-bold">
+                  Not calculate yet.
+                </p>
+              </div>
+              <div v-if="distance != 0" class="mt-4">
                 <p class="text-gray-700 text-xl text-bold">
                   Distance: {{ distance }}
                 </p>
@@ -181,7 +183,7 @@
                 <div v-if="showButtonRoad">
                   <button
                     @click="roadmapButtonPressed"
-                    class="mt-4 bg-amber-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"
+                    class="mt-4 bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded"
                   >
                     Go to road map
                   </button>
@@ -190,46 +192,32 @@
             </div>
           </div>
         </div>
-      </div>
-      <!-- <div
-      v-if="noTi"
-      id="toast-bottom-right"
-      class="fixed flex items-center max-w-xs p-4 space-x-4 text-gray-500 bg-white divide-x divide-gray-200 rounded-lg shadow right-5 bottom-5 dark:text-gray-400 dark:divide-gray-700 space-x dark:bg-gray-800"
-      role="alert"
-    >
-      <div class="text-sm font-normal">Need to show road map please login.</div>
-      <div class="flex items-center ml-auto space-x-2">
-        <a
-          class="text-sm font-medium text-blue-600 p-1.5 hover:bg-blue-100 rounded-lg dark:text-blue-500 dark:hover:bg-gray-700"
-          href="/login"
-          >OK</a
+        <div
+          v-if="showTemplates === true"
+          class="bg-green-500 bg-opacity-50 flex flex-col items-center mt-4 rounded-lg shadow-lg p-6"
         >
-        <button
-          @click="closeNoti"
-          type="button"
-          class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
-          data-dismiss-target="#toast-undo"
-          aria-label="Close"
-        >
-          <span class="sr-only">Close</span>
-          <svg
-            class="w-3 h-3"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 14"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-            />
-          </svg>
-        </button>
+          <h1 class="text-xl font-bold mb-2">Result of filter</h1>
+          <div class="flex items-center justify-center">
+            <!-- <div class="grid grid-cols-1">
+              <div class="mt-4">
+                <p v-if="ev" class="text-red-700 text-xl text-bold">PTT</p>
+                <p v-if="elexa" class="text-red-700 text-xl text-bold">EleXA</p>
+                <p v-if="mea" class="text-red-700 text-xl text-bold">MEA</p>
+                <p v-if="pea" class="text-red-700 text-xl text-bold">PEA</p>
+                <p v-if="ea" class="text-red-700 text-xl text-bold">EA</p>
+                <p v-if="evolt" class="text-red-700 text-xl text-bold">EVolt</p>
+                <p v-if="mg" class="text-red-700 text-xl text-bold">MG</p>
+              </div>
+            </div> -->
+            <p
+              v-if="selectedItems.length > 0"
+              class="text-red-700 text-xl text-bold mt-4"
+            >
+              Filter items: {{ selectedItemsString }}
+            </p>
+          </div>
+        </div>
       </div>
-    </div> -->
     </div>
   </body>
 </template>
@@ -283,6 +271,22 @@ export default {
     //     mg: this.mg,
     //   };
     // },
+    selectedItems() {
+      const items = [];
+      if (this.acType) items.push("AC Type");
+      if (this.dcType) items.push("DC Type");
+      if (this.ev) items.push("PTT");
+      if (this.elexa) items.push("EleXA");
+      if (this.mea) items.push("MEA");
+      if (this.pea) items.push("PEA");
+      if (this.ea) items.push("EA");
+      if (this.evolt) items.push("EVolt");
+      if (this.mg) items.push("MG");
+      return items;
+    },
+    selectedItemsString() {
+      return this.selectedItems.join(", ");
+    },
   },
   watch: {
     origin: function () {
@@ -459,6 +463,7 @@ export default {
     closeNoti() {
       this.showLogin = false;
     },
+    distanceZero() {},
   },
 };
 </script>

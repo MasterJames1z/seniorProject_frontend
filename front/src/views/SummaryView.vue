@@ -1,7 +1,12 @@
 <template>
   <!-- {{ totalCost }} -->
   <!-- <h1>Summary of plan</h1> -->
-  <div class="app bg-green-800">
+  <div
+    style="
+      background-image: url('https://static.vecteezy.com/system/resources/previews/008/017/890/original/or-illustrator-of-yellow-electric-vehicle-with-an-electric-charging-cabinet-with-nature-green-grass-and-shadow-of-town-under-blue-sky-and-white-clouds-vector.jpg');
+    "
+    class="app bg-cover"
+  >
     <BarChart />
   </div>
 </template>
