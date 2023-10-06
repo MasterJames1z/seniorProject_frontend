@@ -85,7 +85,13 @@
       class="bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded mt-4"
       @click="showAllDetails"
     >
-      Show all summary details
+      Show all summary details</button
+    ><br />
+    <button
+      class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded mt-4"
+      @click="captureAndSaveWebpage"
+    >
+      Capture and Save Webpage
     </button>
   </div>
 </template>
@@ -99,6 +105,8 @@ import {
   BarController,
   BarElement,
 } from "chart.js";
+import html2canvas from "html2canvas";
+import { saveAs } from "file-saver";
 
 Chart.register(CategoryScale, LinearScale, BarController, BarElement);
 
@@ -157,6 +165,17 @@ export default {
 
       detailsElements.forEach((details) => {
         details.open = showDetails;
+      });
+    },
+    async captureAndSaveWebpage() {
+      // Capture the webpage content as an image using html2canvas
+      const webpageElement = document.querySelector(".chart-container");
+      const canvas = await html2canvas(webpageElement);
+
+      // Convert the captured image to a Blob
+      canvas.toBlob((blob) => {
+        // Save the Blob as a file
+        saveAs(blob, "webpage_capture.png");
       });
     },
   },
