@@ -49,7 +49,7 @@
         </div>
       </div>
     </details>
-    <details class="question py-4 border-b border-grey-lighter">
+    <!-- <details class="question py-4 border-b border-grey-lighter">
       <summary class="flex items-center">
         Compare with car
         <button class="ml-auto">
@@ -79,13 +79,19 @@
           <p class="text-red-500">update 24/09/2023</p>
         </div>
       </div>
-    </details>
+    </details> -->
     <button
       id="showAllDetailsButton"
       class="bg-green-500 hover:bg-green-700 text-white px-4 py-2 rounded mt-4"
       @click="showAllDetails"
     >
-      Show all summary details
+      Show all summary details</button
+    ><br />
+    <button
+      class="bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded mt-4"
+      @click="captureAndSaveWebpage"
+    >
+      Capture and Save Webpage
     </button>
   </div>
 </template>
@@ -99,6 +105,9 @@ import {
   BarController,
   BarElement,
 } from "chart.js";
+
+import html2canvas from "html2canvas";
+import { saveAs } from "file-saver";
 
 Chart.register(CategoryScale, LinearScale, BarController, BarElement);
 
@@ -159,6 +168,17 @@ export default {
         details.open = showDetails;
       });
     },
+    async captureAndSaveWebpage() {
+      // Capture the webpage content as an image using html2canvas
+      const webpageElement = document.querySelector(".chart-container");
+      const canvas = await html2canvas(webpageElement);
+
+      // Convert the captured image to a Blob
+      canvas.toBlob((blob) => {
+        // Save the Blob as a file
+        saveAs(blob, "webpage_capture.png");
+      });
+    },
   },
   data() {
     return {
@@ -179,5 +199,10 @@ export default {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
+  background-color: #f0f0f0; /* Custom background color */
+  font-family: "Arial", sans-serif; /* Custom font family */
+  color: #333; /* Custom text color */
+  padding: 20px; /* Add padding for spacing */
+  /* Add other custom styles as needed */
 }
 </style>

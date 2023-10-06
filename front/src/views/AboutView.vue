@@ -19,7 +19,7 @@
       {{ errorMessage }}
     </div>
     <GoogleMap
-      api-key="AIzaSyAAUnokPnN8yWpQqaf5rFPIWrqyM26f1E4"
+      api-key="AIzaSyBBBTnD1m1mng6BoBzUvFGrHhNcAF8RJvE"
       style="width: 100%; height: 700px"
       :center="currentLocation"
       :zoom="12"

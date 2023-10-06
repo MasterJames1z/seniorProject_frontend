@@ -302,7 +302,7 @@ export default {
         this.errorMessage = "Please enter both origin and destination.";
         return;
       }
-      const apiKey = "AIzaSyDyU5quiY550C5Sxx7qzcwiWRedc5DnRzc";
+      const apiKey = "AIzaSyBBBTnD1m1mng6BoBzUvFGrHhNcAF8RJvE";
       const origin = encodeURIComponent(this.origin);
       const destination = encodeURIComponent(this.destination);
       const URL = `http://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/distancematrix/json?origins=${origin}&destinations=${destination}&key=${apiKey}`;
