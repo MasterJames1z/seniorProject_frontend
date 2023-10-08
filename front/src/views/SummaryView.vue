@@ -86,7 +86,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   height: 100%;
   /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); Add a subtle text shadow */
 }
