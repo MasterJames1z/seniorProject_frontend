@@ -22,9 +22,17 @@
 <script>
 import mjson from "D:/Senior/seniorProject_frontend/front/new_map.json";
 import tripView from "../components/TripplanCard.vue";
+import HistoryService from "@/services/HistoryService";
+import GStore from "@/store";
 
 export default {
   inject: ["GStore"],
+  beforeRouteEnter() {
+    const id = {
+      user_id: GStore.currentUser.id,
+    };
+    HistoryService.get_tripplan(id);
+  },
   computed: {
     currentUser() {
       return this.GStore.currentUser;

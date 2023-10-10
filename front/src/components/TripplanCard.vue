@@ -6,6 +6,16 @@
     class="bg-cover"
   >
     <div class="container">
+      <!-- <div>
+        {{ data }}
+        {{ GStore.tripplan_list[GStore.tripplan_list.length - 1].ev }}
+        {{ GStore.tripplan_list[GStore.tripplan_list.length - 1].pea }}
+        <div
+          v-if="(GStore.tripplan_list[GStore.tripplan_list.length - 1].ev = 1)"
+        >
+          <h1>EV</h1>
+        </div>
+      </div> -->
       <div class="flex flex-col md:grid grid-cols-12 text-gray-50">
         <div
           v-if="tripcard.distance < currentUser.distance * 0.9"
@@ -42,8 +52,32 @@
                 target="_blank"
                 class="inline-flex items-center text-white hover:underline"
               >
-                {{ detail.name }}
-                <svg
+                <div v-if="data.ev == 1">
+                  <div v-if="detail.station_of == 'ev'">{{ detail.name }}</div>
+                </div>
+                <div v-if="data.elexa == 1">
+                  <div v-if="detail.station_of == 'elexa'">
+                    {{ detail.name }}
+                  </div>
+                </div>
+                <div v-if="data.mea == 1">
+                  <div v-if="detail.station_of == 'mea'">{{ detail.name }}</div>
+                </div>
+                <div v-if="data.pea == 1">
+                  <div v-if="detail.station_of == 'pea'">{{ detail.name }}</div>
+                </div>
+                <div v-if="data.ea == 1">
+                  <div v-if="detail.station_of == 'ea'">{{ detail.name }}</div>
+                </div>
+                <div v-if="data.evolt == 1">
+                  <div v-if="detail.station_of == 'evolt'">
+                    {{ detail.name }}
+                  </div>
+                </div>
+                <div v-if="data.mg == 1">
+                  <div v-if="detail.station_of == 'mg'">{{ detail.name }}</div>
+                </div>
+                <!-- <svg
                   class="w-3 h-3 ml-2.5"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +91,7 @@
                     stroke-width="2"
                     d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
                   />
-                </svg>
+                </svg> -->
               </a>
             </div>
             <button
@@ -143,7 +177,29 @@
                 target="_blank"
                 class="inline-flex items-center text-white hover:underline"
               >
-                {{ detail.name }}
+                <!-- {{ detail.name }} -->
+                <div v-if="data.ev == 1">
+                  <div v-if="detail.station_of == 'ev'">{{ detail.name }}</div>
+                </div>
+                <div v-if="data.elexa == 1">
+                  <div v-if="detail.station_of == 'elexa'">
+                    {{ detail.name }}
+                  </div>
+                </div>
+                <div v-if="data.mea == 1">
+                  <div v-if="detail.station_of == 'mea'">{{ detail.name }}</div>
+                </div>
+                <div v-if="data.pea == 1">
+                  <div v-if="detail.station_of == 'pea'">{{ detail.name }}</div>
+                </div>
+                <div v-if="data.ea == 1">
+                  <div v-if="detail.station_of == 'ea'">{{ detail.name }}</div>
+                </div>
+                <div v-if="data.evolt == 1">
+                  <div v-if="detail.station_of == 'evolt'">
+                    {{ detail.name }}
+                  </div>
+                </div>
                 <svg
                   class="w-3 h-3 ml-2.5"
                   aria-hidden="true"
@@ -241,7 +297,29 @@
                 target="_blank"
                 class="inline-flex items-center text-white hover:underline"
               >
-                {{ detail.name }}
+                <!-- {{ detail.name }} -->
+                <div v-if="data.ev == 1">
+                  <div v-if="detail.station_of == 'ev'">{{ detail.name }}</div>
+                </div>
+                <div v-if="data.elexa == 1">
+                  <div v-if="detail.station_of == 'elexa'">
+                    {{ detail.name }}
+                  </div>
+                </div>
+                <div v-if="data.mea == 1">
+                  <div v-if="detail.station_of == 'mea'">{{ detail.name }}</div>
+                </div>
+                <div v-if="data.pea == 1">
+                  <div v-if="detail.station_of == 'pea'">{{ detail.name }}</div>
+                </div>
+                <div v-if="data.ea == 1">
+                  <div v-if="detail.station_of == 'ea'">{{ detail.name }}</div>
+                </div>
+                <div v-if="data.evolt == 1">
+                  <div v-if="detail.station_of == 'evolt'">
+                    {{ detail.name }}
+                  </div>
+                </div>
                 <svg
                   class="w-3 h-3 ml-2.5"
                   aria-hidden="true"
@@ -310,9 +388,17 @@
 </template>
 
 <script>
+import GStore from "@/store";
+import HistoryService from "@/services/HistoryService";
 export default {
   name: "TripCard",
   inject: ["GStore"],
+  beforeRouteEnter() {
+    const id = {
+      user_id: GStore.currentUser.id,
+    };
+    HistoryService.get_tripplan(id);
+  },
   props: {
     tripcard: {
       type: Object,
@@ -326,6 +412,7 @@ export default {
       totalCost: this.GStore.totalCost,
       isPopupVisible: false,
       cost: 0,
+      data: GStore.tripplan_list[GStore.tripplan_list.length - 1],
       // totalCost: null,
     };
   },
