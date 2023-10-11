@@ -52,65 +52,74 @@
                 target="_blank"
                 class="inline-flex items-center text-white hover:underline"
               >
-                <div v-if="data.ev == 1">
-                  <div v-if="detail.station_of == 'ev'">
-                    {{ detail.name }}
+                <div v-if="allServicesZero">
+                  {{ detail.name }}
+                </div>
+                <div v-else>
+                  <div v-if="data.ev == 1">
+                    <div v-if="detail.station_of == 'ev'">
+                      {{ detail.name }}
+                    </div>
                   </div>
-                </div>
-                <div v-if="data.elexa == 1">
-                  <div v-if="detail.station_of == 'elexa'">
-                    {{ detail.name }}
+                  <div v-if="data.elexa == 1">
+                    <div v-if="detail.station_of == 'elexa'">
+                      {{ detail.name }}
+                    </div>
                   </div>
-                </div>
-                <div v-if="data.mea == 1">
-                  <div v-if="detail.station_of == 'mea'">
-                    {{ detail.name }}
+                  <div v-if="data.mea == 1">
+                    <div v-if="detail.station_of == 'mea'">
+                      {{ detail.name }}
+                    </div>
                   </div>
-                </div>
-                <div v-if="data.pea == 1">
-                  <div v-if="detail.station_of == 'pea'">
-                    {{ detail.name }}
+                  <div v-if="data.pea == 1">
+                    <div v-if="detail.station_of == 'pea'">
+                      {{ detail.name }}
+                    </div>
                   </div>
-                </div>
-                <div v-if="data.ea == 1">
-                  <div v-if="detail.station_of == 'ea'">
-                    {{ detail.name }}
+                  <div v-if="data.ea == 1">
+                    <div v-if="detail.station_of == 'ea'">
+                      {{ detail.name }}
+                    </div>
                   </div>
-                </div>
-                <div v-if="data.evolt == 1">
-                  <div v-if="detail.station_of == 'evolt'">
-                    {{ detail.name }}
+                  <div v-if="data.evolt == 1">
+                    <div v-if="detail.station_of == 'evolt'">
+                      {{ detail.name }}
+                    </div>
                   </div>
-                </div>
-                <div v-if="data.mg == 1">
-                  <div v-if="detail.station_of == 'mg'">
-                    {{ detail.name }}
+                  <div v-if="data.mg == 1">
+                    <div v-if="detail.station_of == 'mg'">
+                      {{ detail.name }}
+                    </div>
                   </div>
-                </div>
-                <div v-if="data.ev == 0">
-                  <div v-if="detail.station_of == 'ev'">Non staion here.</div>
-                </div>
-                <div v-if="data.elexa == 0">
-                  <div v-if="detail.station_of == 'elexa'">
-                    Non staion here.
+                  <div v-if="data.ev == 0">
+                    <div v-if="detail.station_of == 'ev'">Non staion here.</div>
                   </div>
-                </div>
-                <div v-if="data.mea == 0">
-                  <div v-if="detail.station_of == 'mea'">Non staion here.</div>
-                </div>
-                <div v-if="data.pea == 0">
-                  <div v-if="detail.station_of == 'pea'">Non staion here.</div>
-                </div>
-                <div v-if="data.ea == 0">
-                  <div v-if="detail.station_of == 'ea'">Non staion here.</div>
-                </div>
-                <div v-if="data.evolt == 0">
-                  <div v-if="detail.station_of == 'evolt'">
-                    Non staion here.
+                  <div v-if="data.elexa == 0">
+                    <div v-if="detail.station_of == 'elexa'">
+                      Non staion here.
+                    </div>
                   </div>
-                </div>
-                <div v-if="data.mg == 0">
-                  <div v-if="detail.station_of == 'mg'">Non staion here.</div>
+                  <div v-if="data.mea == 0">
+                    <div v-if="detail.station_of == 'mea'">
+                      Non staion here.
+                    </div>
+                  </div>
+                  <div v-if="data.pea == 0">
+                    <div v-if="detail.station_of == 'pea'">
+                      Non staion here.
+                    </div>
+                  </div>
+                  <div v-if="data.ea == 0">
+                    <div v-if="detail.station_of == 'ea'">Non staion here.</div>
+                  </div>
+                  <div v-if="data.evolt == 0">
+                    <div v-if="detail.station_of == 'evolt'">
+                      Non staion here.
+                    </div>
+                  </div>
+                  <div v-if="data.mg == 0">
+                    <div v-if="detail.station_of == 'mg'">Non staion here.</div>
+                  </div>
                 </div>
                 <!-- <svg
                   class="w-3 h-3 ml-2.5"
@@ -212,53 +221,74 @@
                 target="_blank"
                 class="inline-flex items-center text-white hover:underline"
               >
-                <!-- {{ detail.name }} -->
-                <div v-if="data.ev == 1">
-                  <div v-if="detail.station_of == 'ev'">{{ detail.name }}</div>
+                <div v-if="allServicesZero">
+                  {{ detail.name }}
                 </div>
-                <div v-if="data.elexa == 1">
-                  <div v-if="detail.station_of == 'elexa'">
-                    {{ detail.name }}
+                <div v-else>
+                  <div v-if="data.ev == 1">
+                    <div v-if="detail.station_of == 'ev'">
+                      {{ detail.name }}
+                    </div>
                   </div>
-                </div>
-                <div v-if="data.mea == 1">
-                  <div v-if="detail.station_of == 'mea'">{{ detail.name }}</div>
-                </div>
-                <div v-if="data.pea == 1">
-                  <div v-if="detail.station_of == 'pea'">{{ detail.name }}</div>
-                </div>
-                <div v-if="data.ea == 1">
-                  <div v-if="detail.station_of == 'ea'">{{ detail.name }}</div>
-                </div>
-                <div v-if="data.evolt == 1">
-                  <div v-if="detail.station_of == 'evolt'">
-                    {{ detail.name }}
+                  <div v-if="data.elexa == 1">
+                    <div v-if="detail.station_of == 'elexa'">
+                      {{ detail.name }}
+                    </div>
                   </div>
-                </div>
-                <div v-if="data.ev == 0">
-                  <div v-if="detail.station_of == 'ev'">Non staion here.</div>
-                </div>
-                <div v-if="data.elexa == 0">
-                  <div v-if="detail.station_of == 'elexa'">
-                    Non staion here.
+                  <div v-if="data.mea == 1">
+                    <div v-if="detail.station_of == 'mea'">
+                      {{ detail.name }}
+                    </div>
                   </div>
-                </div>
-                <div v-if="data.mea == 0">
-                  <div v-if="detail.station_of == 'mea'">Non staion here.</div>
-                </div>
-                <div v-if="data.pea == 0">
-                  <div v-if="detail.station_of == 'pea'">Non staion here.</div>
-                </div>
-                <div v-if="data.ea == 0">
-                  <div v-if="detail.station_of == 'ea'">Non staion here.</div>
-                </div>
-                <div v-if="data.evolt == 0">
-                  <div v-if="detail.station_of == 'evolt'">
-                    Non staion here.
+                  <div v-if="data.pea == 1">
+                    <div v-if="detail.station_of == 'pea'">
+                      {{ detail.name }}
+                    </div>
                   </div>
-                </div>
-                <div v-if="data.mg == 0">
-                  <div v-if="detail.station_of == 'mg'">Non staion here.</div>
+                  <div v-if="data.ea == 1">
+                    <div v-if="detail.station_of == 'ea'">
+                      {{ detail.name }}
+                    </div>
+                  </div>
+                  <div v-if="data.evolt == 1">
+                    <div v-if="detail.station_of == 'evolt'">
+                      {{ detail.name }}
+                    </div>
+                  </div>
+                  <div v-if="data.mg == 1">
+                    <div v-if="detail.station_of == 'mg'">
+                      {{ detail.name }}
+                    </div>
+                  </div>
+                  <div v-if="data.ev == 0">
+                    <div v-if="detail.station_of == 'ev'">Non staion here.</div>
+                  </div>
+                  <div v-if="data.elexa == 0">
+                    <div v-if="detail.station_of == 'elexa'">
+                      Non staion here.
+                    </div>
+                  </div>
+                  <div v-if="data.mea == 0">
+                    <div v-if="detail.station_of == 'mea'">
+                      Non staion here.
+                    </div>
+                  </div>
+                  <div v-if="data.pea == 0">
+                    <div v-if="detail.station_of == 'pea'">
+                      Non staion here.
+                    </div>
+                  </div>
+                  <div v-if="data.ea == 0">
+                    <div v-if="detail.station_of == 'ea'">Non staion here.</div>
+                  </div>
+                  <div v-if="data.evolt == 0">
+                    <div v-if="detail.station_of == 'evolt'">
+                      Non staion here.
+                    </div>
+                  </div>
+                  <div v-if="data.mg == 0">
+                    <div v-if="detail.station_of == 'mg'">Non staion here.</div>
+                  </div>
                 </div>
                 <!-- <svg
                   class="w-3 h-3 ml-2.5"
@@ -357,53 +387,74 @@
                 target="_blank"
                 class="inline-flex items-center text-white hover:underline"
               >
-                <!-- {{ detail.name }} -->
-                <div v-if="data.ev == 1">
-                  <div v-if="detail.station_of == 'ev'">{{ detail.name }}</div>
+                <div v-if="allServicesZero">
+                  {{ detail.name }}
                 </div>
-                <div v-if="data.elexa == 1">
-                  <div v-if="detail.station_of == 'elexa'">
-                    {{ detail.name }}
+                <div v-else>
+                  <div v-if="data.ev == 1">
+                    <div v-if="detail.station_of == 'ev'">
+                      {{ detail.name }}
+                    </div>
                   </div>
-                </div>
-                <div v-if="data.mea == 1">
-                  <div v-if="detail.station_of == 'mea'">{{ detail.name }}</div>
-                </div>
-                <div v-if="data.pea == 1">
-                  <div v-if="detail.station_of == 'pea'">{{ detail.name }}</div>
-                </div>
-                <div v-if="data.ea == 1">
-                  <div v-if="detail.station_of == 'ea'">{{ detail.name }}</div>
-                </div>
-                <div v-if="data.evolt == 1">
-                  <div v-if="detail.station_of == 'evolt'">
-                    {{ detail.name }}
+                  <div v-if="data.elexa == 1">
+                    <div v-if="detail.station_of == 'elexa'">
+                      {{ detail.name }}
+                    </div>
                   </div>
-                </div>
-                <div v-if="data.ev == 0">
-                  <div v-if="detail.station_of == 'ev'">Non staion here.</div>
-                </div>
-                <div v-if="data.elexa == 0">
-                  <div v-if="detail.station_of == 'elexa'">
-                    Non staion here.
+                  <div v-if="data.mea == 1">
+                    <div v-if="detail.station_of == 'mea'">
+                      {{ detail.name }}
+                    </div>
                   </div>
-                </div>
-                <div v-if="data.mea == 0">
-                  <div v-if="detail.station_of == 'mea'">Non staion here.</div>
-                </div>
-                <div v-if="data.pea == 0">
-                  <div v-if="detail.station_of == 'pea'">Non staion here.</div>
-                </div>
-                <div v-if="data.ea == 0">
-                  <div v-if="detail.station_of == 'ea'">Non staion here.</div>
-                </div>
-                <div v-if="data.evolt == 0">
-                  <div v-if="detail.station_of == 'evolt'">
-                    Non staion here.
+                  <div v-if="data.pea == 1">
+                    <div v-if="detail.station_of == 'pea'">
+                      {{ detail.name }}
+                    </div>
                   </div>
-                </div>
-                <div v-if="data.mg == 0">
-                  <div v-if="detail.station_of == 'mg'">Non staion here.</div>
+                  <div v-if="data.ea == 1">
+                    <div v-if="detail.station_of == 'ea'">
+                      {{ detail.name }}
+                    </div>
+                  </div>
+                  <div v-if="data.evolt == 1">
+                    <div v-if="detail.station_of == 'evolt'">
+                      {{ detail.name }}
+                    </div>
+                  </div>
+                  <div v-if="data.mg == 1">
+                    <div v-if="detail.station_of == 'mg'">
+                      {{ detail.name }}
+                    </div>
+                  </div>
+                  <div v-if="data.ev == 0">
+                    <div v-if="detail.station_of == 'ev'">Non staion here.</div>
+                  </div>
+                  <div v-if="data.elexa == 0">
+                    <div v-if="detail.station_of == 'elexa'">
+                      Non staion here.
+                    </div>
+                  </div>
+                  <div v-if="data.mea == 0">
+                    <div v-if="detail.station_of == 'mea'">
+                      Non staion here.
+                    </div>
+                  </div>
+                  <div v-if="data.pea == 0">
+                    <div v-if="detail.station_of == 'pea'">
+                      Non staion here.
+                    </div>
+                  </div>
+                  <div v-if="data.ea == 0">
+                    <div v-if="detail.station_of == 'ea'">Non staion here.</div>
+                  </div>
+                  <div v-if="data.evolt == 0">
+                    <div v-if="detail.station_of == 'evolt'">
+                      Non staion here.
+                    </div>
+                  </div>
+                  <div v-if="data.mg == 0">
+                    <div v-if="detail.station_of == 'mg'">Non staion here.</div>
+                  </div>
                 </div>
                 <!-- <svg
                   class="w-3 h-3 ml-2.5"
@@ -500,6 +551,19 @@ export default {
       data: GStore.tripplan_list[GStore.tripplan_list.length - 1],
       // totalCost: null,
     };
+  },
+  computed: {
+    allServicesZero() {
+      return (
+        this.data.ev == 0 &&
+        this.data.elexa == 0 &&
+        this.data.mea == 0 &&
+        this.data.pea == 0 &&
+        this.data.ea == 0 &&
+        this.data.evolt == 0 &&
+        this.data.mg == 0
+      );
+    },
   },
   methods: {
     generateMap() {

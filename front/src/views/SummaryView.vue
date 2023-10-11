@@ -49,7 +49,7 @@ export default {
       // Convert the captured image to a Blob
       canvas.toBlob((blob) => {
         // Save the Blob as a file
-        saveAs(blob, "webpage_capture.png");
+        saveAs(blob, "ev_better_summary.png");
       });
     },
     sharePage() {
