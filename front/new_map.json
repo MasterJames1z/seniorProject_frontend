@@ -410,13 +410,15 @@
                 "longigude": "100.47269800721567"
             },
             "chager_3": {
-                "station_of": " ev",
+                "station_of": "ev",
                 "name": "PTT จรเข้ร้อง ไชโย อ่างทอง",
-                "type_dc": {
-                    "sta_1": " CCS 120KW "
-                },
-                "type_ac": {
-                    "sta_1": " Type 2 22KW"
+                "type": {
+                    "type_dc": {
+                        "sta_1": " CCS 120KW "
+                    },
+                    "type_ac": {
+                        "sta_1": " Type 2 22KW"
+                    }
                 },
                 "latitude": "14.663651209497054",
                 "longitude": "100.47132167416468"
@@ -428,7 +430,7 @@
         "distance": 630,
         "station_in": {
             "chager_1": {
-                "station_of": " pea",
+                "station_of": "pea",
                 "name": " PEA VOLTA ปั๊มน้ำมันบางจาก บางปะอิน (สายเอเชีย กม.62 ขาออก) ",
                 "type": {
                     "type_dc": {
@@ -474,7 +476,7 @@
         "distance": 670,
         "station_in": {
             "chager_1": {
-                "station_of": " pea",
+                "station_of": "pea",
                 "name": "PEA VOLTA รังสิต ",
                 "type": {
                     "type_dc": {

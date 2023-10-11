@@ -53,7 +53,9 @@
                 class="inline-flex items-center text-white hover:underline"
               >
                 <div v-if="data.ev == 1">
-                  <div v-if="detail.station_of == 'ev'">{{ detail.name }}</div>
+                  <div v-if="detail.station_of == 'ev'">
+                    {{ detail.name }}
+                  </div>
                 </div>
                 <div v-if="data.elexa == 1">
                   <div v-if="detail.station_of == 'elexa'">
@@ -61,13 +63,19 @@
                   </div>
                 </div>
                 <div v-if="data.mea == 1">
-                  <div v-if="detail.station_of == 'mea'">{{ detail.name }}</div>
+                  <div v-if="detail.station_of == 'mea'">
+                    {{ detail.name }}
+                  </div>
                 </div>
                 <div v-if="data.pea == 1">
-                  <div v-if="detail.station_of == 'pea'">{{ detail.name }}</div>
+                  <div v-if="detail.station_of == 'pea'">
+                    {{ detail.name }}
+                  </div>
                 </div>
                 <div v-if="data.ea == 1">
-                  <div v-if="detail.station_of == 'ea'">{{ detail.name }}</div>
+                  <div v-if="detail.station_of == 'ea'">
+                    {{ detail.name }}
+                  </div>
                 </div>
                 <div v-if="data.evolt == 1">
                   <div v-if="detail.station_of == 'evolt'">
@@ -75,7 +83,34 @@
                   </div>
                 </div>
                 <div v-if="data.mg == 1">
-                  <div v-if="detail.station_of == 'mg'">{{ detail.name }}</div>
+                  <div v-if="detail.station_of == 'mg'">
+                    {{ detail.name }}
+                  </div>
+                </div>
+                <div v-if="data.ev == 0">
+                  <div v-if="detail.station_of == 'ev'">Non staion here.</div>
+                </div>
+                <div v-if="data.elexa == 0">
+                  <div v-if="detail.station_of == 'elexa'">
+                    Non staion here.
+                  </div>
+                </div>
+                <div v-if="data.mea == 0">
+                  <div v-if="detail.station_of == 'mea'">Non staion here.</div>
+                </div>
+                <div v-if="data.pea == 0">
+                  <div v-if="detail.station_of == 'pea'">Non staion here.</div>
+                </div>
+                <div v-if="data.ea == 0">
+                  <div v-if="detail.station_of == 'ea'">Non staion here.</div>
+                </div>
+                <div v-if="data.evolt == 0">
+                  <div v-if="detail.station_of == 'evolt'">
+                    Non staion here.
+                  </div>
+                </div>
+                <div v-if="data.mg == 0">
+                  <div v-if="detail.station_of == 'mg'">Non staion here.</div>
                 </div>
                 <!-- <svg
                   class="w-3 h-3 ml-2.5"
@@ -200,7 +235,32 @@
                     {{ detail.name }}
                   </div>
                 </div>
-                <svg
+                <div v-if="data.ev == 0">
+                  <div v-if="detail.station_of == 'ev'">Non staion here.</div>
+                </div>
+                <div v-if="data.elexa == 0">
+                  <div v-if="detail.station_of == 'elexa'">
+                    Non staion here.
+                  </div>
+                </div>
+                <div v-if="data.mea == 0">
+                  <div v-if="detail.station_of == 'mea'">Non staion here.</div>
+                </div>
+                <div v-if="data.pea == 0">
+                  <div v-if="detail.station_of == 'pea'">Non staion here.</div>
+                </div>
+                <div v-if="data.ea == 0">
+                  <div v-if="detail.station_of == 'ea'">Non staion here.</div>
+                </div>
+                <div v-if="data.evolt == 0">
+                  <div v-if="detail.station_of == 'evolt'">
+                    Non staion here.
+                  </div>
+                </div>
+                <div v-if="data.mg == 0">
+                  <div v-if="detail.station_of == 'mg'">Non staion here.</div>
+                </div>
+                <!-- <svg
                   class="w-3 h-3 ml-2.5"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
@@ -214,7 +274,7 @@
                     stroke-width="2"
                     d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
                   />
-                </svg>
+                </svg> -->
               </a>
             </div>
             <button
@@ -320,7 +380,32 @@
                     {{ detail.name }}
                   </div>
                 </div>
-                <svg
+                <div v-if="data.ev == 0">
+                  <div v-if="detail.station_of == 'ev'">Non staion here.</div>
+                </div>
+                <div v-if="data.elexa == 0">
+                  <div v-if="detail.station_of == 'elexa'">
+                    Non staion here.
+                  </div>
+                </div>
+                <div v-if="data.mea == 0">
+                  <div v-if="detail.station_of == 'mea'">Non staion here.</div>
+                </div>
+                <div v-if="data.pea == 0">
+                  <div v-if="detail.station_of == 'pea'">Non staion here.</div>
+                </div>
+                <div v-if="data.ea == 0">
+                  <div v-if="detail.station_of == 'ea'">Non staion here.</div>
+                </div>
+                <div v-if="data.evolt == 0">
+                  <div v-if="detail.station_of == 'evolt'">
+                    Non staion here.
+                  </div>
+                </div>
+                <div v-if="data.mg == 0">
+                  <div v-if="detail.station_of == 'mg'">Non staion here.</div>
+                </div>
+                <!-- <svg
                   class="w-3 h-3 ml-2.5"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
@@ -334,7 +419,7 @@
                     stroke-width="2"
                     d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
                   />
-                </svg>
+                </svg> -->
               </a>
             </div>
             <button
