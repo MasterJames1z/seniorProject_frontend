@@ -16,12 +16,15 @@
             give best and good experience to road a trip on them planner of
             trips.
           </p>
-          <button
-            @click="getStart"
-            class="bg-green-600 text-white font-bold rounded-lg py-2 px-4 mt-8 hover:bg-white hover:text-green-600"
-          >
-            GET STARTED
-          </button>
+          <div>
+            <button
+              @click="getStart"
+              type="button"
+              class="bg-green-600 text-white font-bold rounded-lg py-2 px-4 mt-8 hover:bg-white hover:text-green-600"
+            >
+              GET STARTED
+            </button>
+          </div>
         </div>
       </header>
     </div>
