@@ -75,7 +75,7 @@
           class="bg-green-500 bg-opacity-50 flex flex-col items-center mt-8 rounded-lg shadow-lg p-6"
         >
           <h1 class="text-gray-700 text-xl font-bold mb-4">Normal search</h1>
-          <div class="flex mt-3">
+          <div v-if="GStore.currentUser" class="flex mt-3">
             <input type="checkbox" class="mr-2" v-model="showTemplates" />
             <label class="text-gray-700">Filter</label>
           </div>

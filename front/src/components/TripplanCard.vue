@@ -6,6 +6,16 @@
     class="bg-cover"
   >
     <div class="container">
+      <!-- <div>
+        {{ data }}
+        {{ GStore.tripplan_list[GStore.tripplan_list.length - 1].ev }}
+        {{ GStore.tripplan_list[GStore.tripplan_list.length - 1].pea }}
+        <div
+          v-if="(GStore.tripplan_list[GStore.tripplan_list.length - 1].ev = 1)"
+        >
+          <h1>EV</h1>
+        </div>
+      </div> -->
       <div class="flex flex-col md:grid grid-cols-12 text-gray-50">
         <div
           v-if="tripcard.distance < currentUser.distance * 0.9"
@@ -37,13 +47,117 @@
               :key="detail.tripcard"
               :tripcard="detail"
             >
-              <a
+              <!-- <a
                 :href="generateMap()"
                 target="_blank"
                 class="inline-flex items-center text-white hover:underline"
-              >
-                {{ detail.name }}
-                <svg
+              > -->
+              <div v-if="allServicesZero">
+                <a
+                  :href="generateMap()"
+                  target="_blank"
+                  class="inline-flex items-center text-white hover:underline"
+                  >{{ detail.name }}</a
+                >
+              </div>
+              <div v-else>
+                <div v-if="data.ev == 1">
+                  <div v-if="detail.station_of == 'ev'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.elexa == 1">
+                  <div v-if="detail.station_of == 'elexa'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.mea == 1">
+                  <div v-if="detail.station_of == 'mea'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.pea == 1">
+                  <div v-if="detail.station_of == 'pea'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.ea == 1">
+                  <div v-if="detail.station_of == 'ea'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.evolt == 1">
+                  <div v-if="detail.station_of == 'evolt'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.mg == 1">
+                  <div v-if="detail.station_of == 'mg'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.ev == 0">
+                  <div v-if="detail.station_of == 'ev'">Non staion here.</div>
+                </div>
+                <div v-if="data.elexa == 0">
+                  <div v-if="detail.station_of == 'elexa'">
+                    Non staion here.
+                  </div>
+                </div>
+                <div v-if="data.mea == 0">
+                  <div v-if="detail.station_of == 'mea'">Non staion here.</div>
+                </div>
+                <div v-if="data.pea == 0">
+                  <div v-if="detail.station_of == 'pea'">Non staion here.</div>
+                </div>
+                <div v-if="data.ea == 0">
+                  <div v-if="detail.station_of == 'ea'">Non staion here.</div>
+                </div>
+                <div v-if="data.evolt == 0">
+                  <div v-if="detail.station_of == 'evolt'">
+                    Non staion here.
+                  </div>
+                </div>
+                <div v-if="data.mg == 0">
+                  <div v-if="detail.station_of == 'mg'">Non staion here.</div>
+                </div>
+              </div>
+              <!-- <svg
                   class="w-3 h-3 ml-2.5"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
@@ -57,8 +171,8 @@
                     stroke-width="2"
                     d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
                   />
-                </svg>
-              </a>
+                </svg> -->
+              <!-- </a> -->
             </div>
             <button
               @click="showPopup"
@@ -138,13 +252,117 @@
               :key="detail.tripcard"
               :tripcard="detail"
             >
-              <a
+              <!-- <a
                 :href="generateMap()"
                 target="_blank"
                 class="inline-flex items-center text-white hover:underline"
-              >
-                {{ detail.name }}
-                <svg
+              > -->
+              <div v-if="allServicesZero">
+                <a
+                  :href="generateMap()"
+                  target="_blank"
+                  class="inline-flex items-center text-white hover:underline"
+                  >{{ detail.name }}</a
+                >
+              </div>
+              <div v-else>
+                <div v-if="data.ev == 1">
+                  <div v-if="detail.station_of == 'ev'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.elexa == 1">
+                  <div v-if="detail.station_of == 'elexa'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.mea == 1">
+                  <div v-if="detail.station_of == 'mea'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.pea == 1">
+                  <div v-if="detail.station_of == 'pea'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.ea == 1">
+                  <div v-if="detail.station_of == 'ea'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.evolt == 1">
+                  <div v-if="detail.station_of == 'evolt'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.mg == 1">
+                  <div v-if="detail.station_of == 'mg'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.ev == 0">
+                  <div v-if="detail.station_of == 'ev'">Non staion here.</div>
+                </div>
+                <div v-if="data.elexa == 0">
+                  <div v-if="detail.station_of == 'elexa'">
+                    Non staion here.
+                  </div>
+                </div>
+                <div v-if="data.mea == 0">
+                  <div v-if="detail.station_of == 'mea'">Non staion here.</div>
+                </div>
+                <div v-if="data.pea == 0">
+                  <div v-if="detail.station_of == 'pea'">Non staion here.</div>
+                </div>
+                <div v-if="data.ea == 0">
+                  <div v-if="detail.station_of == 'ea'">Non staion here.</div>
+                </div>
+                <div v-if="data.evolt == 0">
+                  <div v-if="detail.station_of == 'evolt'">
+                    Non staion here.
+                  </div>
+                </div>
+                <div v-if="data.mg == 0">
+                  <div v-if="detail.station_of == 'mg'">Non staion here.</div>
+                </div>
+              </div>
+              <!-- <svg
                   class="w-3 h-3 ml-2.5"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
@@ -158,8 +376,8 @@
                     stroke-width="2"
                     d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
                   />
-                </svg>
-              </a>
+                </svg> -->
+              <!-- </a> -->
             </div>
             <button
               @click="showPopup"
@@ -236,13 +454,117 @@
               :key="detail.tripcard"
               :tripcard="detail"
             >
-              <a
+              <!-- <a
                 :href="generateMap()"
                 target="_blank"
                 class="inline-flex items-center text-white hover:underline"
-              >
-                {{ detail.name }}
-                <svg
+              > -->
+              <div v-if="allServicesZero">
+                <a
+                  :href="generateMap()"
+                  target="_blank"
+                  class="inline-flex items-center text-white hover:underline"
+                  >{{ detail.name }}</a
+                >
+              </div>
+              <div v-else>
+                <div v-if="data.ev == 1">
+                  <div v-if="detail.station_of == 'ev'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.elexa == 1">
+                  <div v-if="detail.station_of == 'elexa'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.mea == 1">
+                  <div v-if="detail.station_of == 'mea'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.pea == 1">
+                  <div v-if="detail.station_of == 'pea'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.ea == 1">
+                  <div v-if="detail.station_of == 'ea'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.evolt == 1">
+                  <div v-if="detail.station_of == 'evolt'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.mg == 1">
+                  <div v-if="detail.station_of == 'mg'">
+                    <a
+                      :href="generateMap()"
+                      target="_blank"
+                      class="inline-flex items-center text-white hover:underline"
+                      >{{ detail.name }}</a
+                    >
+                  </div>
+                </div>
+                <div v-if="data.ev == 0">
+                  <div v-if="detail.station_of == 'ev'">Non staion here.</div>
+                </div>
+                <div v-if="data.elexa == 0">
+                  <div v-if="detail.station_of == 'elexa'">
+                    Non staion here.
+                  </div>
+                </div>
+                <div v-if="data.mea == 0">
+                  <div v-if="detail.station_of == 'mea'">Non staion here.</div>
+                </div>
+                <div v-if="data.pea == 0">
+                  <div v-if="detail.station_of == 'pea'">Non staion here.</div>
+                </div>
+                <div v-if="data.ea == 0">
+                  <div v-if="detail.station_of == 'ea'">Non staion here.</div>
+                </div>
+                <div v-if="data.evolt == 0">
+                  <div v-if="detail.station_of == 'evolt'">
+                    Non staion here.
+                  </div>
+                </div>
+                <div v-if="data.mg == 0">
+                  <div v-if="detail.station_of == 'mg'">Non staion here.</div>
+                </div>
+              </div>
+              <!-- <svg
                   class="w-3 h-3 ml-2.5"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
@@ -256,8 +578,8 @@
                     stroke-width="2"
                     d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
                   />
-                </svg>
-              </a>
+                </svg> -->
+              <!-- </a> -->
             </div>
             <button
               @click="showPopup"
@@ -310,9 +632,17 @@
 </template>
 
 <script>
+import GStore from "@/store";
+import HistoryService from "@/services/HistoryService";
 export default {
   name: "TripCard",
   inject: ["GStore"],
+  beforeRouteEnter() {
+    const id = {
+      user_id: GStore.currentUser.id,
+    };
+    HistoryService.get_tripplan(id);
+  },
   props: {
     tripcard: {
       type: Object,
@@ -326,8 +656,22 @@ export default {
       totalCost: this.GStore.totalCost,
       isPopupVisible: false,
       cost: 0,
+      data: GStore.tripplan_list[GStore.tripplan_list.length - 1],
       // totalCost: null,
     };
+  },
+  computed: {
+    allServicesZero() {
+      return (
+        this.data.ev == 0 &&
+        this.data.elexa == 0 &&
+        this.data.mea == 0 &&
+        this.data.pea == 0 &&
+        this.data.ea == 0 &&
+        this.data.evolt == 0 &&
+        this.data.mg == 0
+      );
+    },
   },
   methods: {
     generateMap() {

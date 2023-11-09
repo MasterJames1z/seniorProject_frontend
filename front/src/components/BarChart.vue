@@ -46,7 +46,7 @@
           </p>
           <p>
             <span>Fuel car = </span>
-            <span class="text-amber-500"> 1665.68 </span> THB
+            <span class="text-amber-500"> 1684 </span> THB
           </p>
           <p>
             <span>Summary is EV using cost less than Fuel cars is </span>
@@ -82,7 +82,7 @@
             Therefore, a total of 47 liters of oil will be used. The total price
             is 1665.68 baht.
           </p> -->
-          <p class="text-red-500">update 08/10/2023</p>
+          <p class="text-red-500">update 13/10/2023</p>
           <!-- <h1>Gasohol E20 S EVO Prices</h1>
           <ul>
             <li v-for="(oil, index) in gasoholE20SEVOList" :key="index">
@@ -145,10 +145,10 @@ export default {
 
       // Update data after the delay
       console.log(this.totalCost);
-      this.yValues = [this.totalCost, 1665.68];
+      this.yValues = [this.totalCost, 1684];
       this.renderChart();
       this.showChart = false;
-      this.summaryCost = 1665.68 - this.totalCost;
+      this.summaryCost = 1684 - this.totalCost;
     },
     renderChart() {
       const ctx = this.$refs.myChart.getContext("2d");
